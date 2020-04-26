@@ -989,24 +989,15 @@
     document.querySelector("#submit").addEventListener("click",function(){
     
       //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
-      let celular = "593992568518";
-      let nombre = document.querySelector("#nombre").value;
-      let correo = document.querySelector("#correo").value;
-      let mensaje = document.querySelector("#mensaje").value;
+      var nombre = document.querySelector("#nombre").value;
+      var correo = document.querySelector("#correo").value;
+      var mensaje = document.querySelector("#mensaje").value;
     
-      resp.classList.remove("fail");
-      resp.classList.remove("send");
+      var whats = "https://api.whatsapp.com/send?phone=593992568518&text=*_LP Creavic Design_*%0A*Nombre:*%0A"
+      + nombre + "%0A*Correo:*%0A"
+      + correo + "%0A*Mensaje:*%0A" + mensaje;
     
-      let url = `https://api.whatsapp.com/send?phone=${celular}&text=
-        *_LP Creavic Design_*%0A
-        *Nombre:*%0A
-        ${nombre}%0A
-        *Correo:*%0A
-        ${correo}%0A
-        *Mensaje:*%0A
-        ${mensaje}`;
-    
-      window.open(url);
+      window.open(whats);
     });
   </script>
 
