@@ -51,6 +51,18 @@
       -o-animation: girando 1.5s linear infinite;
       animation: girando 1.5s linear infinite;
   }  
+
+  #respuesta {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+  }
+  #respuesta.fail {
+    color: rgb(187, 17, 17);
+  }
+  #respuesta.send {
+    color: white;
+}
   
   @keyframes girando{
       from { transform: rotate(0deg);} 
@@ -947,6 +959,7 @@
                 </div>
                 <div class="col-lg-10 form-group menos">
                     <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" rows="5" required></textarea><br>
+                    <div id="respuesta"></div>
                     <button class="btn btn-light btn-xl" id="submit">Enviar</button>
                 </div> 
             </form>
@@ -988,14 +1001,25 @@
   <script>
     document.querySelector("#submit").addEventListener("click",function(){
     
-      //INGRESE UN NUMERO DE WHATSAPP VALIDO AQUI:
+      var celular = "593992568518";
       var nombre = document.querySelector("#nombre").value;
       var correo = document.querySelector("#correo").value;
       var mensaje = document.querySelector("#mensaje").value;
+      let respuesta = document.querySelector("#respuesta");
     
-      var whats = "https://api.whatsapp.com/send?phone=593992568518&text=*_LP Creavic Design_*%0A*Nombre:*%0A"
-      + nombre + "%0A*Correo:*%0A"
-      + correo + "%0A*Mensaje:*%0A" + mensaje;
+      var whats = "https://api.whatsapp.com/send?phone=" + celular + "&text=*_LP Creavic Design_*" +
+      "%0A*Nombre:*%0A" + nombre + 
+      "%0A*Correo:*%0A" + correo + 
+      "%0A*Mensaje:*%0A" + mensaje;
+
+      if (nombre === "" || correo === "" || mensaje === "") {
+        respuesta.classList.add("fail");
+        respuesta.innerHTML = "Faltan algunos datos," + nombre;
+        return false;
+      }
+      respuesta.classList.remove("fail");
+      respuesta.classList.add("send");
+      respuesta.innerHTML = "Se ha enviado tu reserva," + nombre;
     
       window.open(whats);
     });
