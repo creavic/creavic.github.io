@@ -44,7 +44,7 @@
       <!-- Contenido de LP -->
       <header>
         <!-- Menú -->
-        <nav class="navbar navbar-expand-md row px-md-5 px-3">
+        <nav class="navbar navbar-expand-md row px-md-5 px-3 py-3">
           <a class="navbar-brand js-scroll-trigger" href="#inicio">
             <img class="img-fluid logo" src="img/logo.svg" width="43px">
           </a>
@@ -219,7 +219,7 @@
               <!-- Primera caja -->
               <div class="col-md-4 col-12">
                 <div class="caja-producto py-1 px-3">
-                  <img src="img/foco.png" class="py-4" width="50px">
+                  <img src="img/iconos/hand-holding-usd.svg" class="py-4" height="80px">
                   <h4 class="texto-turquesa">Basic</h4>
                   <h2 class="pt-2 pb-3 font-weight-bold texto-negro">$250.00</h2>
                   <!-- Beneficios -->
@@ -251,7 +251,7 @@
               <!-- Segunda caja -->
               <div class="col-md-4 col-12 py-md-0 py-4">
                 <div class="caja-producto py-1 px-3 pt-md-4 pt-0">
-                  <img src="img/foco.png" class="py-4" width="50px">
+                  <img src="img/iconos/hand-holding-heart.svg" class="py-4" height="90px">
                   <h4 class="texto-turquesa">Medium</h4>
                   <h2 class="pt-2 pb-3 font-weight-bold texto-negro">$400.00</h2>
                   <!-- Beneficios -->
@@ -283,7 +283,7 @@
               <!-- Tercera caja -->
               <div class="col-md-4 col-12">
                 <div class="caja-producto py-1 px-3">
-                  <img src="img/foco.png" class="py-4" width="50px">
+                  <img src="img/iconos/hand-holding-usd.svg" class="py-4" height="85px">
                   <h4 class="texto-turquesa">Premium</h4>
                   <h2 class="pt-2 pb-3 font-weight-bold texto-negro">$750.00</h2>
                   <!-- Beneficios -->
@@ -438,17 +438,17 @@
             <div class="form-group mb-0">
               <div class="row justify-content-center mb-3">
                   <div class="col-md-5 col-12 mb-md-0 mb-3">
-                      <input id="nombre" name="nombre" class="form-control" type="text" onchange="comprobando()" onkeyup="escribiendo()" required>
+                      <input id="nombre" name="nombre" class="form-control nombre" type="text" onchange="comprobando()" onkeyup="escribiendo()" required>
                       <label for="nombre" id="nombre2" class="label-holder">Nombre</label>
                   </div>
                   <div class="col-md-5 col-12">
-                      <input id="correo" name="correo" class="form-control" type="email" onchange="comprobando2()" required>
+                      <input id="correo" name="correo" class="form-control correo" type="email" onchange="comprobando2()" required>
                       <label for="correo" id="correo2" class="label-holder">Correo</label>
                   </div>
               </div>
               <div class="row justify-content-center">
                 <div class="col-md-10 col-12 text-center">
-                  <textarea class="form-control" id="mensaje" name="mensaje" rows="5" onchange="comprobando3()" required></textarea><br>
+                  <textarea class="form-control mensaje" id="mensaje" name="mensaje" rows="5" onchange="comprobando3()" required></textarea><br>
                   <label for="mensaje" id="mensaje2" class="label-holder">Mensaje</label>
                   <span id="respuesta"></span>
                   <a class="boton-blanco px-5" id="enviar">Enviar</a>
@@ -522,30 +522,30 @@
       function comprobando(){
         var valor = document.getElementById("nombre").value;
         if(valor!==""){
-          document.getElementById("nombre").className = "llenoInput";
+          document.getElementById("nombre").className = "llenoInput nombre";
           document.getElementById("nombre2").className = "llenoLabel";
         } else {
-          document.getElementById("nombre").className = "form-control";
+          document.getElementById("nombre").className = "form-control nombre";
           document.getElementById("nombre2").className = "label-holder";
         }
       }
       function comprobando2(){
         var valor2 = document.getElementById("correo").value;
         if(valor2!==""){
-          document.getElementById("correo").className = "llenoInput";
+          document.getElementById("correo").className = "llenoInput correo";
           document.getElementById("correo2").className = "llenoLabel"; 
         } else {
-          document.getElementById("correo").className = "form-control";
+          document.getElementById("correo").className = "form-control correo";
           document.getElementById("correo2").className = "label-holder";
         }
       }
       function comprobando3(){
         var valor3 = document.getElementById("mensaje").value;
         if(valor3!==""){
-          document.getElementById("mensaje").className = "llenoArea";
+          document.getElementById("mensaje").className = "llenoArea mensaje";
           document.getElementById("mensaje2").className = "llenoLabel"; 
         } else {
-          document.getElementById("mensaje").className = "form-control";
+          document.getElementById("mensaje").className = "form-control mensaje";
           document.getElementById("mensaje2").className = "label-holder";
         }
       }

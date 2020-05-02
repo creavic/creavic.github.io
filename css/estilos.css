@@ -16,7 +16,7 @@
     --bg-gris: #FAFAFA; 
     --bg-negro: #000000;  
     --bt-turqueza: rgb(70, 205, 200);
-    --bt-blanco: rgb(234, 255, 255);
+    --bt-blanco: rgb(225, 255, 255);
 }
 * {
     padding: 0px;
@@ -192,17 +192,21 @@ button:focus {
 }
 .mover {
     cursor: pointer;
-    height: 70px;
+    height: 57px;
     transition: 0.4s;
 }  
 a:hover .mover {
     transform: rotate(7deg);
 } 
 .caja-producto {
-    border: solid 1px var(--bg-gris);
     border-radius: 8px;
-    box-shadow: var(--tx-gris) 0px 2px 7px;
+    box-shadow: var(--tx-gris) 0px 4px 12px;
     background-color: var(--bg-blanco);
+    transition: 0.2s ease-in-out;
+}
+.caja-producto:hover {
+    box-shadow: var(--bg-turqueza) 0px 4px 12px;
+    transform: scale(1.007);
 }
 a:hover {
     text-decoration: none;
@@ -245,7 +249,7 @@ a:hover {
     cursor: pointer;
     background-image: url(../img/iconos/flecha-arriba.svg);
     background-repeat: no-repeat;
-    background-position: top 23px right 100px; 
+    background-position: top 22px right 90px; 
     background-size: 10px;
     padding-right: 10px;
     transition: 0.2s ease;
@@ -257,7 +261,7 @@ a:hover {
     cursor: pointer;
     background-image: url(../img/iconos/flecha-abajo.svg);
     background-repeat: no-repeat;
-    background-position: top 23px right 100px; 
+    background-position: top 22px right 90px; 
     background-size: 10px;
     padding-right: 10px;
     transition: 0.2s ease;
@@ -279,7 +283,7 @@ a:hover .colores {
 }   
 .mover2 {
     cursor: pointer;
-    height: 70px;
+    height: 57px;
     transition: 0.5s;
 }  
 a:hover .mover2 { 
@@ -356,6 +360,25 @@ a:hover .mover2 {
     background-color:var(--bg-gris);
     border: none;
     box-shadow: none;
+}
+.nombre {
+    background-image: url(../img/iconos/user-alt.svg);
+    background-position: center right 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+.correo {
+    background-image: url(../img/iconos/at.svg);
+    background-position: center right 10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+}
+.mensaje {
+    padding-right: 32px;
+    background-image: url(../img/iconos/comment.svg);
+    background-position: top 9px right 10px;
+    background-repeat: no-repeat;
+    background-size: 18px;
 }
 .redes-sociales {
     width: 43px;
