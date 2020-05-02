@@ -245,7 +245,7 @@ a:hover {
     cursor: pointer;
     background-image: url(../img/iconos/flecha-arriba.svg);
     background-repeat: no-repeat;
-    background-position: top 23px right 95px; 
+    background-position: top 23px right 100px; 
     background-size: 10px;
     padding-right: 10px;
     transition: 0.2s ease;
@@ -257,7 +257,7 @@ a:hover {
     cursor: pointer;
     background-image: url(../img/iconos/flecha-abajo.svg);
     background-repeat: no-repeat;
-    background-position: top 23px right 95px; 
+    background-position: top 23px right 100px; 
     background-size: 10px;
     padding-right: 10px;
     transition: 0.2s ease;
