@@ -1,1051 +1,569 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
+  <head>
+     <!-- Icono de pestaña -->
+    <link rel="icon" href="img/foco.png">
 
-<head>
-  <link rel="icon" href="img/foco.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Creavic Design</title>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- Íconos de contactos -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <!-- Visita individual de las imágenes -->
-  <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <!-- Estilos Movistar -->
+    <link rel="stylesheet" href="css/estilos.css">
 
-  <!-- Tema de la página -->
-  <link href="css/creative.min.css" rel="stylesheet">
-  
-  <style>
-  *{
-      font-family: helvetica;
-  }
-      
-  #contenido{
-      background-color:white;
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      z-index: 10000;
-      transition: all 1s ease;
-  }
-  
-  .cargando{
-      border: solid;
-      border-width: 14px;
-      border-color: lightgray;
-      border-top-color: aquamarine;
-      border-top-style: ridge;
-      border-radius: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 70px;
-      height: 70px;
-      margin: auto;
-      -webkit-animation: girando 1.5s linear infinite;
-      -moz-animation: girando 1.5s linear infinite;
-      -ms-animation: girando 1.5s linear infinite;
-      -o-animation: girando 1.5s linear infinite;
-      animation: girando 1.5s linear infinite;
-  }  
+    <title>Creavic Design</title>
+  </head>
+  <body>
+    <div class="container-fluid">
 
-  #respuesta {
-    width: 100%;
-    margin: 5px 0px 20px 0px;
-    font-size: 20px;
-  }
-  #respuesta.fail {
-    color: rgb(187, 17, 17);
-  }
-  #respuesta.send {
-    color: white;
-}
-  
-  @keyframes girando{
-      from { transform: rotate(0deg);} 
-      to { transform: rotate(360deg);}  
-  }  
-      
-  .gris{
-        background-color:whitesmoke;
-  }  
-  
-  .logo{
-        width: 70px;
-        height: auto;
-        margin: -5px 0 -5px 0;
-  }  
-      
-  .logo:hover {
-        opacity: 0.7;
-  } 
-  
-  .ajustando{
-        position: relative;
-        top: 50%;
-        bottom: 50%;
-  }  
-      
-  .colores{
-        filter: grayscale(77%);
-        -webkit-filter: grayscale(77%);
-        -moz-filter: grayscale(77%);
-        -ms-filter: grayscale(77%);
-        -o-filter: grayscale(77%);
-        margin: 0 0 14px 0;
-        opacity: 0.7;
-        transition: 0.3s;
-  }  
-      
-  a:hover .colores{
-        filter: grayscale(0%);
-        -webkit-filter: grayscale(10%);
-        -moz-filter: grayscale(0%);
-        -ms-filter: grayscale(0%);
-        -o-filter: grayscale(0%);
-        opacity:1;
-  } 
-      
-  .redes-sociales{
-        width: 43px;
-        fill:#58B7B1;
-        margin: 2px 5px 0px 5px;
-        opacity:1;
-        transform: scale(1);
-        transition: 0.4s;
-  } 
-  
-  .redes-sociales2{
-        width: 43px;
-        fill:#58B7B1;
-        margin: 2px 5px 0px 10px;
-        opacity:1;
-        transform: scale(1);
-        transition: 0.4s;
-  } 
-  
-  .mover{
-        transition: 0.4s;
-  }  
-      
-  a:hover .mover{
-        transform: rotate(7deg);
-  } 
-  
-  .mover2{
-        transition: 0.5s;
-  }  
-      
-  a:hover .mover2{
-        transform: translateY(7px);
-  } 
-      
-  a:hover .encimaf{
-        fill: #3b5998;
-        transform: scale(1.4);
-  } 
-      
-  a:hover .encimai{
-        fill: #c32aa3;
-        transform: scale(1.4);
-  }    
-
-  a:hover .encimay{
-        fill: #ff0000;
-        transform: scale(1.4);
-  }  
-  
-  a:hover .encimaw{
-        fill: #25d366;
-        transform: scale(1.4);
-  } 
-      
-  .menos3{
-        margin: -135px 0px 0px 0;
-  }    
-      
-  .menos2{
-        margin: -25px 0px 0px 0;
-  }    
-      
-  .menos{
-        margin: 0px 0px -40px 0;
-  }    
-      
-  .menos1{
-        margin: -50px 0px;
-  }
-  .nav-link {
-    color:gray !important;
-  }  
-  </style>
-
-</head>
-
-    
-<body id="page-top">
-    
-    
-<!-- Cargar -->
-  <div id="contenido">
-      <p class="text-muted pl-4 pt-3"> Cargando...</p>
-      <div class="cargando">
+      <!-- Animación de Precarga -->
+      <div id="contenido">
+        <div class="cargando"></div>
       </div>
-  </div>
 
-  <!-- POP UP -->
-  <div class="modal fade text-center" id="paquetes" role="dialog">
-    <div class="modal-dialog">
-      <!-- POP UP CONTENIDO-->
-      <br> <br> <br> <br>
-      <div class="modal-content">
-        <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal">&times;</button> <br>
-            <h7><strong>¿Deseas adquirir alguno de nuestros servicios?</strong></h7> <br><br>
-            <p>Cominícate directamente con nosotros para ayudarte con más información.</p><br>
-            <form>
-                <a href="#contact"><button class="btn btn-default pull-right btn-info" type="button" onclick="listo();">CONTACTAR</button></a>
-            </form><br>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-<script> 
-    function abrir(){
-      $(document).ready(function() {
-      $("#paquetes").modal("show")     
-      });
-    }
-    function listo(){
-      $("#paquetes").modal("hide");
-    }  
-</script>
-
-    
-  <!-- Menú -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="img-fluid logo" src="img/creavic.png"></a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">NOSOTROS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">SERVICIOS</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#portfolio">PORTAFOLIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#clientes">CLIENTES</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">CONTACTOS</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-    
-  <!-- Sección - INICIO -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10 align-self-end">
-          <h1 class="text-uppercase text-white font-weight-bold">Agencia de Publicidad</h1>
-          <hr class="divider my-4">
-        </div>
-        <div class="col-lg-8 align-self-baseline">
-          <p class="text-white-75 font-weight-light mb-5">¿Estás seguro de invertir en tu marca?</p>
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">¡Obvio!</a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-    
-  <!-- Sección - NOSOTROS -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-white mt-0">NOSOTROS</h2>
-          <hr class="divider light my-4">
-          <p class="text-white mb-4"><br>Somos una agencia integral, compuesta por grandes profesionales con un desempeño óptimo frente a cualquier campo publicitario.<br><br>
-            Ya no basta con solo transmitir información, ahora es necesario generar experiencias, contenido y entretenimiento. Con ello las marcas además de conseguir consumidores, ganan seguidores.<br><br><br>
-            Nuestra <b>misión</b> es brindar un servicio de calidad, rápido, personalizado y creativo. Orientado a la satisfacción de nuestros clientes y el cumplimiento de sus objetivos comunicacionales a través de soluciones publicitarias efectivas dirigidas a las audiencias actuales.<br><br>
-            Nuestra <b>visión</b> es ser una agencia publicitaria de excelencia, superando las expectativas de nuestros clientes. 
-        </div>
-      </div>
-    </div>
-  </section>
-
-    
-  <!-- Sección - SERVICIOS -->
-  <section class="page-section" id="services">
-    <div class="container">
-      <h2 class="text-center mt-0">SERVICIOS</h2>
-      <hr class="divider my-4">
-      <div class="row">
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-pen-nib text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Imagen Corporativa</h3>
-            <p class="text-muted mb-0">Diseño de logotipo, papeleria, etc.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-book-open text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Editorial</h3>
-            <p class="text-muted mb-0">Maquetación de revistas, catálogos, etc.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-play text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Multimedia</h3>
-            <p class="text-muted mb-0">Animación digital 2D.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-camera text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Fotografía</h3>
-            <p class="text-muted mb-0">Fotografía de productos, modelos, etc.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-cube text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Modelado 3D</h3>
-            <p class="text-muted mb-0">Creación de objetos tridimensionales.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-video text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Audiovisual</h3>
-            <p class="text-muted mb-0">Producción y postproducción audiovisual.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-laptop-code text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Web</h3>
-            <p class="text-muted mb-0">Desarrollo de páginas web responsive.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-keyboard text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">Social Media</h3>
-            <p class="text-muted mb-0">Mantenimiento de redes sociales.</p>
-          </div></a>
-        </div>
-        <div class="col-lg-4 col-md-6 text-center">
-          <a onclick="abrir()"><div class="mt-5">
-            <i class="fas fa-4x fa-globe text-muted3 mb-4 mover"></i>
-            <h3 class="h4 mb-2">SEO & SEM</h3>
-            <p class="text-muted mb-0">Posicionamiento en motores de búsqueda.</p>
-          </div></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    
-  <!-- Sección - PORTAFOLIO -->
-  <section class="page-section" id="portfolio">
-    <div class="container-fluid p-0">
-    <h2 class="text-center mt-0">PORTAFOLIO</h2>
-    <hr class="divider my-4">
-      <div class="row no-gutters">
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                ILUSTRACION
-              </div>
-              <div class="project-name">
-                Vectorización de auto
-              </div>
+      <!-- POP UP -->
+      <div class="modal fade text-center" id="paquetes" role="dialog">
+        <div class="modal-dialog">
+          <!-- POP UP CONTENIDO-->
+          <br> <br> <br> <br>
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal">&times;</button> <br>
+              <p><strong>¿Deseas adquirir alguno de nuestros servicios?</strong></p>
+              <p>Cominícate directamente con nosotros para ayudarte con más información.</p>
+              <a href="#contactos"><button class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();">Contactar</button></a>
             </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                ILUSTRACION
-              </div>
-              <div class="project-name">
-                Vectorización de gafas
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                ILUSTRACION
-              </div>
-              <div class="project-name">
-                Vectorización de pimiento
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Etiquetas para productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Etiquetas para productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Etiquetas para productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/7i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Pepeleria
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/8i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Flyer
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/9i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Flyer
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/10i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Roll up
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/11i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Gigantografía
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/12i.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                IMAGEN CORPORATIVA
-              </div>
-              <div class="project-name">
-                Calendario
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1e.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                EDITORIAL
-              </div>
-              <div class="project-name">
-                Maquetación de catálogo
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2e.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                EDITORIAL
-              </div>
-              <div class="project-name">
-                Maquetación de catálogo
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3e.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                EDITORIAL
-              </div>
-              <div class="project-name">
-                Maquetación de catálogo
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4e.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                EDITORIAL
-              </div>
-              <div class="project-name">
-                Maquetación de folleto
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5e.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                EDITORIAL
-              </div>
-              <div class="project-name">
-                Maquetación de folleto
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6e.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                EDITORIAL
-              </div>
-              <div class="project-name">
-                Maquetación de revista
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de locación
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía artística
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotomanipulación
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/4f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de modelo
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/5f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de modelo
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/6f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de modelo
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/7f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de productos
-              </div>
-            </div>
-          </div>
-        </div> 
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/8f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/9f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/10f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/11f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/12f.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                FOTOGRAFIA
-              </div>
-              <div class="project-name">
-                Fotografía de productos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1w.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                WEB
-              </div>
-              <div class="project-name">
-                Página de cursos
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2w.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                WEB
-              </div>
-              <div class="project-name">
-                Página de inmótica
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3w.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                WEB
-              </div>
-              <div class="project-name">
-                Mailing
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/1m.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                MODELADO 3D
-              </div>
-              <div class="project-name">
-                Desarrollo de personaje
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/2m.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                MODELADO 3D
-              </div>
-              <div class="project-name">
-                Desarrollo de objetos
-              </div>
-            </div>
-          </div>
-        </div>
-         <div class="col-lg-4 col-sm-6">
-          <div class="portfolio-box">
-            <img class="img-fluid" src="img/portfolio/thumbnails/3m.jpg" alt="">
-            <div class="portfolio-box-caption">
-              <div class="project-category text-white-50">
-                MODELADO 3D
-              </div>
-              <div class="project-name">
-                Desarrollo de locaciones
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-12 col-sm-12">
-          <video src=vide/reel.mp4 class="img-fluid" style="width:100%" controls></video>
-        </div>
-      </div>
-    </div>
-  </section>
-    
-    
-  <!-- Sección - CLIENTES --> 
-  <section class="page-section gris menos3" id="clientes"> 
-   <div class="container">
-      <h2 class="text-center mt-0">Marcas que confíaron en nosotros</h2>
-      <hr class="divider my-4">
-      <div class="row">
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 210px" class="img-fluid colores" src="img/marcas/mavic.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 210px" class="img-fluid colores" src="img/marcas/liut.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 160px" class="img-fluid colores" src="img/marcas/victoria.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 225px" class="img-fluid colores" src="img/marcas/skin.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 250px" class="img-fluid colores" src="img/marcas/plan.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 230px" class="img-fluid colores" src="img/marcas/Liga.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 170px" class="img-fluid colores" src="img/marcas/sc.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 240px" class="img-fluid colores ajustando" src="img/marcas/liggi.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 270px" class="img-fluid colores" src="img/marcas/karate.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 250px" class="img-fluid colores" src="img/marcas/trans.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 287px" class="img-fluid colores" src="img/marcas/tommy.png"></a>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-4 text-center">
-          <div class="mt-5">
-            <a><img style="width: 230px" class="img-fluid colores" src="img/marcas/sammy.png"></a>
           </div>
         </div>
       </div>
-    </div>
-    </section>
 
-    
-  <!-- Sección - CONTACTOS -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="mt-0">CONTACTOS</h2>
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">¿Estás listo para comenzar tu próximo proyecto juntos?<br>¡Llámanos o envíanos un correo electrónico!</p>
+      <!-- Contenido de LP -->
+      <header>
+        <!-- Menú -->
+        <nav class="navbar navbar-expand-md row px-md-5 px-3">
+          <a class="navbar-brand js-scroll-trigger" href="#inicio">
+            <img class="img-fluid logo" src="img/logo.svg" width="43px">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div id="boton">
+              <input type="checkbox">
+              <span class="linea"></span>
+            </div> 
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto my-2 my-md-0">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#nosotros">NOSOTROS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#servicios">SERVICIOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#portafolio">PORTAFOLIO</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#clientes">CLIENTES</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#contactos">CONTACTOS</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="fondo-arriba" id="inicio">
+          <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-12 align-self-end">
+              <h1 class="text-uppercase texto-blanco font-weight-bold">Agencia de Publicidad</h1>
+              <hr class="linea-titular-turquesa">
+            </div>
+            <div class="col-md-8 align-self-baseline">
+              <p class="texto-blanco font-weight-light mb-5">¿Estás seguro de invertir en tu marca?</p>
+              <a href="#nosotros"><button class="boton-turquesa px-5" id="submit">¡Por supuesto!</button></a>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="row menos">
-        <div class="col-lg-4 ml-auto text-center">
-          <a><i class="fas fa-phone fa-3x mb-3 text-muted3 mover2"></i>
-          <div>(+593) 099-256-8518</div> <br></a>
-        </div>
-        <div class="col-lg-4 mr-auto text-center">
-          <a><i class="fas fa-envelope fa-3x mb-3 text-muted3 mover2"></i>
-          <div>creavicdesign@hotmail.com</div></a>
-        </div>
-      </div>
-      </div>
-  </section>
+      </header>
+
+      <main>
+        <!-- Sección - NOSOTROS -->
+        <section class="row bg-turquesa" id="nosotros">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 text-center">
+                <h2 class="texto-blanco mt-0">NOSOTROS</h2>
+                <hr class="linea-titular-blanco">
+                <div class="row justify-content-center pt-4">
+                  <div class="col-md-5 col-12 text-center mb-md-0 mb-2">
+                    <p class="texto-blanco">
+                      Somos una agencia integral, compuesta por grandes profesionales con un desempeño óptimo frente a cualquier campo publicitario.<br><br>
+                      Ya no basta con solo transmitir información, ahora es necesario generar experiencias, contenido y entretenimiento. Con ello las marcas además de conseguir consumidores, ganan seguidores.
+                    </p>
+                  </div>
+                  <div class="col-md-5 col-12 text-center">
+                    <p class="texto-blanco">
+                      Nuestra <b>misión</b> es brindar un servicio de calidad, rápido, personalizado y creativo. Orientado a la satisfacción de nuestros clientes y el cumplimiento de sus objetivos comunicacionales a través de soluciones publicitarias efectivas dirigidas a las audiencias actuales.<br><br>
+                      Nuestra <b>visión</b> es ser una agencia publicitaria de excelencia, superando las expectativas de nuestros clientes. 
+                    </p>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección - SERVICIOS -->
+        <section class="row justify-content-center bg-blanco" id="servicios">
+          <div class="container text-center">
+            <h2 class="text-center mt-0">SERVICIOS</h2>
+            <hr class="linea-titular-turquesa">
+            <div class="row justify-content-center">
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/corporativo.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Imagen Corporativa</h3>
+                    <p class="text-muted mb-0">Diseño de logotipo, papeleria, etc.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/editorial.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Editorial</h3>
+                    <p class="text-muted mb-0">Maquetación de revistas, catálogos, etc.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/multimedia.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Multimedia</h3>
+                    <p class="text-muted mb-0">Animación digital 2D.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/fotografia.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Fotografía</h3>
+                    <p class="text-muted mb-0">Fotografía de productos, modelos, etc.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/modelado.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Modelado 3D</h3>
+                    <p class="text-muted mb-0">Creación de objetos tridimensionales.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/audiovisual.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Audiovisual</h3>
+                    <p class="text-muted mb-0">Producción y postproducción audiovisual.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/web.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Web</h3>
+                    <p class="text-muted mb-0">Desarrollo de páginas web responsive.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/social-media.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">Social Media</h3>
+                    <p class="text-muted mb-0">Mantenimiento de redes sociales.</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 text-center">
+                <a onclick="abrir()">
+                  <div class="mt-5">
+                    <img src="img/iconos/seo-sem.svg" class="mb-4 mover">
+                    <h3 class="h4 mb-2">SEO & SEM</h3>
+                    <p class="text-muted mb-0">Posicionamiento en motores de búsqueda.</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección de Productos -->
+        <section class="row bg-blanco">
+          <div class="container text-center">
+            <h2 class="texto-negro pb-2">Elige tu box preferido</h2>
+            <p class="texto-gris pt-2 pb-3">Estas maravillosas cajas contienen todo lo que necesitas.</p>
+            <!-- Cajas de Productos -->
+            <div class="row justify-content-center align-items-center">
+              <!-- Primera caja -->
+              <div class="col-md-4 col-12">
+                <div class="caja-producto py-1 px-3">
+                  <img src="img/redes.svg" class="py-4">
+                  <h5 class="texto-negro">The Fit Box</h5>
+                  <h2 class="py-2">$00.00</h2>
+                  <p class="texto-gris">Complementa tu rutina</p>
+                  <!-- Beneficios -->
+                  <div class="row px-4">
+                    <div class="col-7 text-left">
+                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Coco</p> 
+                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Nueces</p> 
+                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Cashew</p> 
+                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Chía</p> 
+                      <p class="texto-gris mb-4"><span class="pr-3">•</span>Pasta de maní</p> 
+                    </div>
+                    <div class="col-5 text-right color-peso">
+                      <p class="mb-0">200gr.</p> 
+                      <p class="mb-0">100gr.</p> 
+                      <p class="mb-0">50gr.</p> 
+                      <p class="mb-0">100gr.</p> 
+                      <p class="mb-4">250gr.</p> 
+                    </div>
+                  </div>
+                  <!-- Botón -->
+                  <a href="" class="boton-blanco my-2" style="width: 100%;">Quiero estar en forma</a>
+                  <!-- Detalles -->
+                  <div class="accordion" id="accordionExample">
+                    <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#uno" aria-expanded="true">
+                      Detalle de productos
+                    </p>
+                    <!-- Características -->
+                    <div id="uno" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class=" pb-4">
+                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 1</p> 
+                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 2</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <p class="texto-gris nota">*Anticipa tu pedido con 24h</p>
+                </div>
+              </div>
+              <!-- Segunda caja -->
+              <div class="col-md-4 col-12 py-md-0 py-4">
+                <div class="caja-producto py-1 px-3 pt-md-4 pt-0">
+                  <img src="img/redes.svg" class="py-4">
+                  <h5 class="texto-negro">The Mix Box</h5>
+                  <h2 class="py-2">$00.00</h2>
+                  <p class="texto-gris">Disfruta de tu estilo de vida</p>
+                  <!-- Beneficios -->
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <!-- Botón -->
+                  <a href="" class="boton-turquesa my-2" style="width: 100%;">Lo quiero en mi vida</a>
+                  <!-- Detalles -->
+                  <div class="accordion" id="accordionExample">
+                    <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#dos" aria-expanded="true">
+                      Detalle de productos
+                    </p>
+                    <!-- Características -->
+                    <div id="dos" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class=" pb-4">
+                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 1</p> 
+                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 2</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <p class="texto-gris nota">*Anticipa tu pedido con 24h</p>
+                </div>
+              </div>
+              <!-- Tercera caja -->
+              <div class="col-md-4 col-12">
+                <div class="caja-producto py-1 px-3">
+                  <img src="img/redes.svg" class="py-4">
+                  <h5 class="texto-negro">Home Wellness</h5>
+                  <h2 class="py-2">$00.00</h2>
+                  <p class="texto-gris">Cuatro paredes llenas de amor y bienestar</p>
+                  <!-- Beneficios -->
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <!-- Botón -->
+                  <a href="" class="boton-blanco my-2" style="width: 100%;">Lo quiero en casa</a>
+                  <!-- Detalles -->
+                  <div class="accordion" id="accordionExample">
+                    <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#tres" aria-expanded="true">
+                      Detalle de productos
+                    </p>
+                    <!-- Características -->
+                    <div id="tres" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                      <div class=" pb-4">
+                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 1</p> 
+                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 2</p> 
+                      </div>
+                    </div>
+                  </div>
+                  <p class="texto-gris nota">*Anticipa tu pedido con 24h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección - CLIENTES --> 
+        <section class="row justify-content-center bg-gris" id="clientes"> 
+          <div class="container text-center">
+            <h2 class="mt-0">Marcas que confíaron en nosotros</h2>
+            <hr class="linea-titular-turquesa">
+            <div class="row">
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 210px" class="img-fluid colores" src="img/marcas/mavic.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 210px" class="img-fluid colores" src="img/marcas/liut.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 160px" class="img-fluid colores" src="img/marcas/victoria.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 225px" class="img-fluid colores" src="img/marcas/skin.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 250px" class="img-fluid colores" src="img/marcas/plan.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 230px" class="img-fluid colores" src="img/marcas/Liga.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 170px" class="img-fluid colores" src="img/marcas/sc.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 240px" class="img-fluid colores ajustando" src="img/marcas/liggi.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 270px" class="img-fluid colores" src="img/marcas/karate.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 250px" class="img-fluid colores" src="img/marcas/trans.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 287px" class="img-fluid colores" src="img/marcas/tommy.png"></a>
+                </div>
+              </div>
+              <div class="col-md-4 text-center">
+                <div class="mt-5">
+                  <a><img style="width: 230px" class="img-fluid colores" src="img/marcas/sammy.png"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección - CONTACTOS -->
+        <section class="row justify-content-center bg-blanco" id="contactos">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8 text-center">
+                <h2 class="mt-0">CONTACTOS</h2>
+                <hr class="linea-titular-turquesa">
+                <p class="text-muted mb-5 mt-3">¿Estás listo para comenzar tu próximo proyecto juntos?<br>¡Llámanos o envíanos un correo electrónico!</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 ml-auto text-center">
+                <a target="_blank" href="#" class="contactos"><img src="img/iconos/telefono.svg" class="mb-3 mover2">
+                <div>(+593) 099-256-8518</div> <br></a>
+              </div>
+              <div class="col-md-4 mr-auto text-center">
+                <a target="_blank" href="mailto:creavicdesign@hotmail.com" class="contactos">
+                  <img src="img/iconos/correo.svg" class="mb-3 mover2">
+                  <div>creavicdesign@hotmail.com</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
      
-    <!-- Formulario -->
-     <section class="page-section bg-dark text-white">
-        <center> 
-             <p class="text-white mb-4 menos2">Si deseas déjanos tu requerimiento por aquí.</p>
-              <form action="">
-                <div class="row" style="margin: 0px;">
-                    <div class="col-lg-2">
-                    </div>
-                    <div class="col-lg-4 form-group">
-                      <input class="form-control" id="nombre" name="nombre" placeholder="Nombre" type="text" required>
-                    </div>
-                    <div class="col-lg-4 form-group">
-                      <input class="form-control" id="correo" name="correo" placeholder="Correo" type="email" required>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                </div>
-                <div class="col-lg-10 form-group menos">
-                    <textarea class="form-control" id="mensaje" name="mensaje" placeholder="Mensaje" rows="5" required></textarea><br>
-                    <div id="respuesta"></div>
-                    <button class="btn btn-light btn-xl" id="submit">Enviar</button>
+        <!-- Formulario -->
+        <section class="row justify-content-center bg-turquesa">
+          <div class="col-md-8 col-12">
+            <h5 class="text-center">¡Hola<span id="escrito"></span>!</h5>
+            <p class="mb-4 text-center">Si deseas déjanos tu requerimiento por aquí.</p>
+            <div class="form-group">
+              <div class="row justify-content-center mb-3">
+                  <div class="col-md-5 col-12 mb-md-0 mb-3">
+                      <input id="nombre" name="nombre" class="form-control" type="text" onchange="comprobando()" onkeyup="escribiendo()" required>
+                      <label for="nombre" id="nombre2" class="label-holder">Email</label>
+                  </div>
+                  <div class="col-md-5 col-12">
+                      <input id="correo" name="correo" class="form-control" type="email" onchange="comprobando2()" required>
+                      <label for="correo" id="correo2" class="label-holder">Correo</label>
+                  </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-12 text-center">
+                  <textarea class="form-control" id="mensaje" name="mensaje" rows="5" onchange="comprobando3()" required></textarea><br>
+                  <label for="mensaje" id="mensaje2" class="label-holder">Mensaje</label>
+                  <span id="respuesta"></span>
+                  <button class="boton-blanco px-5" id="submit">Enviar</button>
                 </div> 
-            </form>
-        </center>
-    </section>
+              </div>
+            </div>
+          </div>
+        </section>
     
-     <!-- Redes Sociales -->
-     <section class="page-section menos1">
-        <center>
-              <a href="https://es-la.facebook.com/creavicdesign/"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimaf">
-                <path d="M448,80v352c0,26.5-21.5,48-48,48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6,5.4-32.9,33.5-32.9H384V98.7 c-6.2-0.8-27.4-2.7-52.2-2.7c-51.6,0-87,31.5-87,89.4v49.9H184v67.6h60.9V480H48c-26.5,0-48-21.5-48-48V80c0-26.5,21.5-48,48-48h352 C426.5,32,448,53.5,448,80z"/></svg>
-            </a>
-              <a href="https://www.instagram.com/creavicdesign/?hl=es"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimai">
-                <path d="M224.1,141c-63.6,0-114.9,51.3-114.9,114.9s51.3,114.9,114.9,114.9S339,319.5,339,255.9S287.7,141,224.1,141z M224.1,330.6 c-41.1,0-74.7-33.5-74.7-74.7s33.5-74.7,74.7-74.7s74.7,33.5,74.7,74.7S265.2,330.6,224.1,330.6L224.1,330.6z M370.5,136.3 c0,14.9-12,26.8-26.8,26.8c-14.9,0-26.8-12-26.8-26.8s12-26.8,26.8-26.8S370.5,121.5,370.5,136.3z M446.6,163.5 c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9,0C95.8,35.1,64,43.3,37.7,69.5 s-34.4,58-36.2,93.9c-2.1,37-2.1,147.9,0,184.9c1.7,35.9,9.9,67.7,36.2,93.9s58,34.4,93.9,36.2c37,2.1,147.9,2.1,184.9,0 c35.9-1.7,67.7-9.9,93.9-36.2c26.2-26.2,34.4-58,36.2-93.9C448.7,311.3,448.7,200.5,446.6,163.5L446.6,163.5z M398.8,388 c-7.8,19.6-22.9,34.7-42.6,42.6c-29.5,11.7-99.5,9-132.1,9s-102.7,2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6 c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7,9-132.1c7.8-19.6,22.9-34.7,42.6-42.6c29.5-11.7,99.5-9,132.1-9s102.7-2.6,132.1,9 c19.6,7.8,34.7,22.9,42.6,42.6c11.7,29.5,9,99.5,9,132.1S410.5,358.6,398.8,388z"/></svg>
-            </a> 
-              <a href="https://www.youtube.com/channel/UCBJT4YpZ9x7ai7k49aiwgkA"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimay">
-                <path d="M549.7,124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8,64,288,64,288,64S117.2,64,74.6,75.5c-23.5,6.3-42,24.9-48.3,48.6 C14.9,167,14.9,256.4,14.9,256.4s0,89.4,11.4,132.3c6.3,23.6,24.8,41.5,48.3,47.8C117.2,448,288,448,288,448s170.8,0,213.4-11.5 c23.5-6.3,42-24.2,48.3-47.8c11.4-42.9,11.4-132.3,11.4-132.3S561.1,167,549.7,124.1z M232.1,337.6V175.2l142.7,81.2L232.1,337.6 L232.1,337.6z"/></svg>
-            </a>
-            <a href="https://wa.me/593992568518?text=Hola!%20Estoy%20interezado%20en%20...%20"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales2 encimaw">
-                <path d="M380.9,97.1C339,55.1,283.2,32,223.9,32c-122.4,0-222,99.6-222,222c0,39.1,10.2,77.3,29.6,111L0,480l117.7-30.9
-	           c32.4,17.7,68.9,27,106.1,27h0.1c122.3,0,224.1-99.6,224.1-222C448,194.8,422.8,139.1,380.9,97.1z M223.9,438.7
-	           c-33.2,0-65.7-8.9-94-25.7l-6.7-4l-69.8,18.3L72,359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2c0-101.7,82.8-184.5,184.6-184.5
-	           c49.3,0,95.6,19.2,130.4,54.1s56.2,81.2,56.1,130.5C410.5,355.9,325.6,438.7,223.9,438.7z M325.1,300.5c-5.5-2.8-32.8-16.2-37.9-18
-	           c-5.1-1.9-8.8-2.8-12.5,2.8c-3.7,5.6-14.3,18-17.6,21.8c-3.2,3.7-6.5,4.2-12,1.4c-32.6-16.3-54-29.1-75.5-66
-	           c-5.7-9.8,5.7-9.1,16.3-30.3c1.8-3.7,0.9-6.9-0.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5c-3.2-0.2-6.9-0.2-10.6-0.2
-	           c-3.7,0-9.7,1.4-14.8,6.9c-5.1,5.6-19.4,19-19.4,46.3s19.9,53.7,22.6,57.4c2.8,3.7,39.1,59.7,94.8,83.8c35.2,15.2,49,16.5,66.6,13.9
-	           c10.7-1.6,32.8-13.4,37.4-26.4s4.6-24.1,3.2-26.4C334.3,304.6,330.6,303.2,325.1,300.5z"/></svg>
-            </a>
-        </center>
-    </section>
+        <!-- Redes Sociales -->
+        <section class="row justify-content-center bg-blanco-redes">
+          <a target="_blank" href="https://es-la.facebook.com/creavicdesign/"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimaf">
+            <path d="M448,80v352c0,26.5-21.5,48-48,48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6,5.4-32.9,33.5-32.9H384V98.7 c-6.2-0.8-27.4-2.7-52.2-2.7c-51.6,0-87,31.5-87,89.4v49.9H184v67.6h60.9V480H48c-26.5,0-48-21.5-48-48V80c0-26.5,21.5-48,48-48h352 C426.5,32,448,53.5,448,80z"/></svg>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/creavicdesign/?hl=es"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimai">
+            <path d="M224.1,141c-63.6,0-114.9,51.3-114.9,114.9s51.3,114.9,114.9,114.9S339,319.5,339,255.9S287.7,141,224.1,141z M224.1,330.6 c-41.1,0-74.7-33.5-74.7-74.7s33.5-74.7,74.7-74.7s74.7,33.5,74.7,74.7S265.2,330.6,224.1,330.6L224.1,330.6z M370.5,136.3 c0,14.9-12,26.8-26.8,26.8c-14.9,0-26.8-12-26.8-26.8s12-26.8,26.8-26.8S370.5,121.5,370.5,136.3z M446.6,163.5 c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9,0C95.8,35.1,64,43.3,37.7,69.5 s-34.4,58-36.2,93.9c-2.1,37-2.1,147.9,0,184.9c1.7,35.9,9.9,67.7,36.2,93.9s58,34.4,93.9,36.2c37,2.1,147.9,2.1,184.9,0 c35.9-1.7,67.7-9.9,93.9-36.2c26.2-26.2,34.4-58,36.2-93.9C448.7,311.3,448.7,200.5,446.6,163.5L446.6,163.5z M398.8,388 c-7.8,19.6-22.9,34.7-42.6,42.6c-29.5,11.7-99.5,9-132.1,9s-102.7,2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6 c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7,9-132.1c7.8-19.6,22.9-34.7,42.6-42.6c29.5-11.7,99.5-9,132.1-9s102.7-2.6,132.1,9 c19.6,7.8,34.7,22.9,42.6,42.6c11.7,29.5,9,99.5,9,132.1S410.5,358.6,398.8,388z"/></svg>
+          </a> 
+          <a target="_blank" href="https://www.youtube.com/channel/UCBJT4YpZ9x7ai7k49aiwgkA"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimay">
+            <path d="M549.7,124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8,64,288,64,288,64S117.2,64,74.6,75.5c-23.5,6.3-42,24.9-48.3,48.6 C14.9,167,14.9,256.4,14.9,256.4s0,89.4,11.4,132.3c6.3,23.6,24.8,41.5,48.3,47.8C117.2,448,288,448,288,448s170.8,0,213.4-11.5 c23.5-6.3,42-24.2,48.3-47.8c11.4-42.9,11.4-132.3,11.4-132.3S561.1,167,549.7,124.1z M232.1,337.6V175.2l142.7,81.2L232.1,337.6 L232.1,337.6z"/></svg>
+          </a>
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, estoy interezado en "><svg viewBox="0 0 576 512" class="img-fluid redes-sociales2 encimaw">
+            <path d="M380.9,97.1C339,55.1,283.2,32,223.9,32c-122.4,0-222,99.6-222,222c0,39.1,10.2,77.3,29.6,111L0,480l117.7-30.9
+            c32.4,17.7,68.9,27,106.1,27h0.1c122.3,0,224.1-99.6,224.1-222C448,194.8,422.8,139.1,380.9,97.1z M223.9,438.7
+            c-33.2,0-65.7-8.9-94-25.7l-6.7-4l-69.8,18.3L72,359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2c0-101.7,82.8-184.5,184.6-184.5
+            c49.3,0,95.6,19.2,130.4,54.1s56.2,81.2,56.1,130.5C410.5,355.9,325.6,438.7,223.9,438.7z M325.1,300.5c-5.5-2.8-32.8-16.2-37.9-18
+            c-5.1-1.9-8.8-2.8-12.5,2.8c-3.7,5.6-14.3,18-17.6,21.8c-3.2,3.7-6.5,4.2-12,1.4c-32.6-16.3-54-29.1-75.5-66
+            c-5.7-9.8,5.7-9.1,16.3-30.3c1.8-3.7,0.9-6.9-0.5-9.7s-12.5-30.1-17.1-41.2c-4.5-10.8-9.1-9.3-12.5-9.5c-3.2-0.2-6.9-0.2-10.6-0.2
+            c-3.7,0-9.7,1.4-14.8,6.9c-5.1,5.6-19.4,19-19.4,46.3s19.9,53.7,22.6,57.4c2.8,3.7,39.1,59.7,94.8,83.8c35.2,15.2,49,16.5,66.6,13.9
+            c10.7-1.6,32.8-13.4,37.4-26.4s4.6-24.1,3.2-26.4C334.3,304.6,330.6,303.2,325.1,300.5z"/></svg>
+          </a>
+        </section>
+      </main>
 
-  <!-- AUTOR -->
-  <footer class="bg-light py-5">
-    <div class="container">
-      <div class="small text-center text-muted2">© 2020 Creavic Design</div>
+      <!-- Derechos -->
+      <footer class="row justify-content-center bg-negro">
+        <div class="small text-center">© 2020 Creavic Design</div>
+      </footer>
+
+      <!-- Whatsapp fijo -->
+      <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, estoy interezado en " class="acceso">
+        <img src="img/iconos/whatsapp.svg">
+      </a>
     </div>
-  </footer>
 
-  <!-- Formulario con Whastsapp -->
-  <script>
-    document.querySelector("#submit").addEventListener("click",function(){
-    
-      var celular = "593992568518";
-      var nombre = document.querySelector("#nombre").value;
-      var correo = document.querySelector("#correo").value;
-      var mensaje = document.querySelector("#mensaje").value;
-      let respuesta = document.querySelector("#respuesta");
-    
-      var whats = "https://api.whatsapp.com/send?phone=" + celular + "&text=*_Creavic Design_*" +
-      "%0A*Nombre:*%0A" + nombre + 
-      "%0A*Correo:*%0A" + correo + 
-      "%0A*Mensaje:*%0A" + mensaje;
-
-      if (nombre === "" || correo === "" || mensaje === "") {
-        respuesta.classList.add("fail");
-        respuesta.innerHTML = "Por favor, completa los campos faltantes.";
-        return false;
-      }
-      respuesta.classList.remove("fail");
-      respuesta.classList.add("send");
-      respuesta.innerHTML = "¡Tu requerimiento se ha enviado exitósamente!<br>Pronto nos contactaremos contigo.";
-    
-      window.open(whats);
-    });
-  </script>
-    
-  <!-- Deslizamiento de la landing-page -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Otros componentes para animaciones  -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
-  <!-- Barra animada sobre el color -->
-  <script src="js/creative.min.js"></script>
-    
-  <!-- Cargando Página -->    
-  <script>
+    <!-- Funciones: Precarga / Pop up / Nombre / Inputs / Whastsapp -->
+    <script>
       window.onload = function(){
-            var cargar = document.getElementById('contenido');
-            cargar.style.display = 'none';
-            cargar.style.opacity = '0';
+        var cargar = document.getElementById('contenido');
+        cargar.style.display = 'none';
+        cargar.style.opacity = '0';
+      }
+
+      function abrir(){
+        $(document).ready(function() {
+          $("#paquetes").modal("show")     
+        });
+      }
+      function listo(){
+        $("#paquetes").modal("hide");
+      }  
+
+      function escribiendo(){
+        var nombre = document.getElementById("nombre").value;
+        var hola = document.getElementById("escrito");
+          hola.innerHTML = " " + nombre;
+        if(nombre==0){
+          hola.innerHTML = "";
         }
-  </script>
+      }
 
-</body>
+      function comprobando(){
+        var valor = document.getElementById("nombre").value;
+        if(valor!==""){
+          document.getElementById("nombre").className = "llenoInput";
+          document.getElementById("nombre2").className = "llenoLabel";
+        } else {
+          document.getElementById("nombre").className = "form-control";
+          document.getElementById("nombre2").className = "label-holder";
+        }
+      }
+      function comprobando2(){
+        var valor2 = document.getElementById("correo").value;
+        if(valor2!==""){
+          document.getElementById("correo").className = "llenoInput";
+          document.getElementById("correo2").className = "llenoLabel"; 
+        } else {
+          document.getElementById("correo").className = "form-control";
+          document.getElementById("correo2").className = "label-holder";
+        }
+      }
+      function comprobando3(){
+        var valor3 = document.getElementById("mensaje").value;
+        if(valor3!==""){
+          document.getElementById("mensaje").className = "llenoArea";
+          document.getElementById("mensaje2").className = "llenoLabel"; 
+        } else {
+          document.getElementById("mensaje").className = "form-control";
+          document.getElementById("mensaje2").className = "label-holder";
+        }
+      }
 
+      document.querySelector("#submit").addEventListener("click",function(){
+        var celular = "593992568518";
+        var nombre = document.querySelector("#nombre").value;
+        var correo = document.querySelector("#correo").value;
+        var mensaje = document.querySelector("#mensaje").value;
+        var respuesta = document.querySelector("#respuesta");
+        var whats = "https://api.whatsapp.com/send?phone=" + celular + "&text=*_Creavic Design_*" +
+        "%0A*Nombre:*%0A" + nombre + 
+        "%0A*Correo:*%0A" + correo + 
+        "%0A*Mensaje:*%0A" + mensaje;
+        if (nombre === "" || correo === "" || mensaje === "") {
+          respuesta.classList.add("fail");
+          respuesta.innerHTML = "Por favor, completa los campos faltantes.";
+          return false;
+        }
+        respuesta.classList.remove("fail");
+        respuesta.classList.add("send");
+        respuesta.innerHTML = "¡Tu requerimiento se ha enviado exitósamente!<br>Pronto nos contactaremos contigo.";
+        window.open(whats);
+      });      
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
 </html>
