@@ -133,8 +133,10 @@ nav {
 #boton .linea:after {
     top: 7px;
 }
+button:focus {
+    outline: none;
+}
 .fondo-arriba {
-    width: 100%;
     height: 100vh;
     background-image: url(../vide/fondo.jpg);
     background-position: center;
@@ -154,15 +156,15 @@ nav {
 .bg-turquesa {
     color: var(--tx-blanco);
     background-color: var(--bg-turqueza);
-    padding: 70px 0px 50px 0px;
+    padding: 70px 0px;
 }
 .bg-blanco {
     background-color: var(--bg-blanco);
-    padding: 70px 0px 50px 0px;
+    padding: 70px 0px;
 }
 .bg-gris {
     background-color: var(--bg-gris);
-    padding: 70px 0px 50px 0px;
+    padding: 70px 0px;
 }
 .bg-blanco-redes {
     background-color: var(--bg-blanco);
@@ -186,9 +188,10 @@ nav {
     color: var(--tx-turqueza);
 }
 .nota {
-    font-size: 14px;
+    font-size: 12px;
 }
 .mover {
+    cursor: pointer;
     height: 70px;
     transition: 0.4s;
 }  
@@ -199,13 +202,15 @@ a:hover .mover {
     border: solid 1px var(--bg-gris);
     border-radius: 8px;
     box-shadow: var(--tx-gris) 0px 2px 7px;
+    background-color: var(--bg-blanco);
 }
 a:hover {
     text-decoration: none;
 }
 .boton-blanco {
+    cursor: pointer;
     display: inline-block;
-    color: var(--tx-turqueza);
+    color: var(--tx-turqueza) !important;
     font-size: 16px;
     text-align: center;
     border: solid 1px var(--tx-turqueza);
@@ -240,7 +245,7 @@ a:hover {
     cursor: pointer;
     background-image: url(../img/iconos/flecha-arriba.svg);
     background-repeat: no-repeat;
-    background-position: top 23px right 70px; 
+    background-position: top 23px right 95px; 
     background-size: 10px;
     padding-right: 10px;
     transition: 0.2s ease;
@@ -252,7 +257,7 @@ a:hover {
     cursor: pointer;
     background-image: url(../img/iconos/flecha-abajo.svg);
     background-repeat: no-repeat;
-    background-position: top 23px right 70px; 
+    background-position: top 23px right 95px; 
     background-size: 10px;
     padding-right: 10px;
     transition: 0.2s ease;
@@ -273,6 +278,7 @@ a:hover .colores {
     bottom: 50%;
 }   
 .mover2 {
+    cursor: pointer;
     height: 70px;
     transition: 0.5s;
 }  
@@ -289,7 +295,7 @@ a:hover .mover2 {
 .form-control {
     color:var(--tx-gris) !important;
     height: 40px;
-    padding-top: 17px; 
+    padding-top: 19px; 
     font-size: 14px;
     border: none;
     border-radius: 4px;
@@ -310,7 +316,7 @@ a:hover .mover2 {
     transition: 0.5s ease;
 }
 .form-control:focus ~ label {
-    top: -15px;
+    top: -13px;
     padding-left: 8px;
     font-size: 10px;
     color: var(--tx-turqueza);
@@ -322,7 +328,7 @@ a:hover .mover2 {
     color: var(--tx-gris);
     position: relative;
     height: 40px;
-    padding: 10px 0px 0px 12px; 
+    padding: 12px 0px 0px 12px; 
     font-size: 14px;
     border-radius: 4px;
     background-color:var(--bg-gris);
@@ -332,7 +338,7 @@ a:hover .mover2 {
 .llenoLabel {
     position: absolute;
     line-height: 50px;
-    top: -15px;
+    top: -13px;
     padding-left: 8px;
     font-size: 10px;
     color: var(--tx-turqueza);
@@ -344,7 +350,7 @@ a:hover .mover2 {
     color: var(--tx-gris);
     position: relative;
     height: auto;
-    padding: 17px 0px 6px 12px; 
+    padding: 19px 0px 6px 12px; 
     font-size: 14px;
     border-radius: 4px;
     background-color:var(--bg-gris);
@@ -401,11 +407,11 @@ a:hover .encimaw {
 #respuesta {
     display: inline-block;
     width: 100%;
-    margin: 5px 0px 20px 0px;
-    font-size: 20px;
+    margin: 5px 0px 25px 0px;
+    font-size: 16px;
 }
 #respuesta.fail {
-    color: rgb(187, 17, 17);
+    color: rgb(187, 0, 0);
 }
 #respuesta.send {
     color: var(--tx-blanco);

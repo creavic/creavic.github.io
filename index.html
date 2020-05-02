@@ -12,7 +12,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- Estilos Movistar -->
+    <!-- Mis Estilos -->
     <link rel="stylesheet" href="css/estilos.css">
 
     <title>Creavic Design</title>
@@ -33,9 +33,9 @@
           <div class="modal-content">
             <div class="modal-body">
               <button type="button" class="close" data-dismiss="modal">&times;</button> <br>
-              <p><strong>¿Deseas adquirir alguno de nuestros servicios?</strong></p>
-              <p>Cominícate directamente con nosotros para ayudarte con más información.</p>
-              <a href="#contactos"><button class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();">Contactar</button></a>
+              <h5 class="font-weight-bold pt-1 pb-2">¿Deseas adquirir alguno de nuestros servicios?</h5>
+              <p>Comunícate directamente con nosotros para ayudarte con más información.</p>
+              <a href="#contactos" class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();">Contactar</a>
             </div>
           </div>
         </div>
@@ -74,23 +74,25 @@
             </ul>
           </div>
         </nav>
-
-        <!-- Banner -->
-        <div class="fondo-arriba" id="inicio">
-          <div class="row h-100 align-items-center justify-content-center text-center">
-            <div class="col-12 align-self-end">
-              <h1 class="text-uppercase texto-blanco font-weight-bold">Agencia de Publicidad</h1>
-              <hr class="linea-titular-turquesa">
-            </div>
-            <div class="col-md-8 align-self-baseline">
-              <p class="texto-blanco font-weight-light mb-5">¿Estás seguro de invertir en tu marca?</p>
-              <a href="#nosotros"><button class="boton-turquesa px-5" id="submit">¡Por supuesto!</button></a>
-            </div>
-          </div>
-        </div>
       </header>
 
       <main>
+        <!-- Banner -->
+        <section class="row fondo-arriba" id="inicio">
+          <div class="container">
+            <div class="row h-100 align-items-center justify-content-center text-center">
+              <div class="col-12 align-self-end">
+                <h1 class="text-uppercase texto-blanco font-weight-bold">Agencia de Publicidad</h1>
+                <hr class="linea-titular-turquesa">
+              </div>
+              <div class="col-md-8 align-self-baseline">
+                <p class="texto-blanco mb-5">¿Estás seguro de invertir en tu marca?</p>
+                <a href="#nosotros" class="boton-turquesa px-5">¡Por supuesto!</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
         <!-- Sección - NOSOTROS -->
         <section class="row bg-turquesa" id="nosotros">
           <div class="container">
@@ -208,116 +210,126 @@
           </div>
         </section>
 
-        <!-- Sección de Productos -->
-        <section class="row bg-blanco">
+        <!-- Sección de Paquetes -->
+        <section class="row bg-gris">
           <div class="container text-center">
-            <h2 class="texto-negro pb-2">Elige tu box preferido</h2>
-            <p class="texto-gris pt-2 pb-3">Estas maravillosas cajas contienen todo lo que necesitas.</p>
-            <!-- Cajas de Productos -->
-            <div class="row justify-content-center align-items-center">
+            <h3 class="texto-negro pb-4">Contrata tu paquete redes sociales</h3>
+            <!-- Paquetes de Redes -->
+            <div class="row justify-content-center align-items-center mt-3">
               <!-- Primera caja -->
               <div class="col-md-4 col-12">
                 <div class="caja-producto py-1 px-3">
-                  <img src="img/redes.svg" class="py-4">
-                  <h5 class="texto-negro">The Fit Box</h5>
-                  <h2 class="py-2">$00.00</h2>
-                  <p class="texto-gris">Complementa tu rutina</p>
+                  <img src="img/foco.png" class="py-4" width="50px">
+                  <h4 class="texto-turquesa">Basic</h4>
+                  <h2 class="pt-2 pb-3 font-weight-bold texto-negro">$250.00</h2>
                   <!-- Beneficios -->
-                  <div class="row px-4">
-                    <div class="col-7 text-left">
-                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Coco</p> 
-                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Nueces</p> 
-                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Cashew</p> 
-                      <p class="texto-gris mb-0"><span class="pr-3">•</span>Chía</p> 
-                      <p class="texto-gris mb-4"><span class="pr-3">•</span>Pasta de maní</p> 
-                    </div>
-                    <div class="col-5 text-right color-peso">
-                      <p class="mb-0">200gr.</p> 
-                      <p class="mb-0">100gr.</p> 
-                      <p class="mb-0">50gr.</p> 
-                      <p class="mb-0">100gr.</p> 
-                      <p class="mb-4">250gr.</p> 
-                    </div>
-                  </div>
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>Manejo de 1 red social.<br>(Facebook o Instagram)</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>3 Publicaciones semanales.<br>(Lunes a Viernes)</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>Generación de 1 campaña<br>pagada al mes.</p> 
+                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Generación de 1 gif al mes.</p> 
                   <!-- Botón -->
-                  <a href="" class="boton-blanco my-2" style="width: 100%;">Quiero estar en forma</a>
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete BASIC de redes sociales." class="boton-blanco my-2" style="width: 100%;">Lo quiero</a>
                   <!-- Detalles -->
                   <div class="accordion" id="accordionExample">
                     <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#uno" aria-expanded="true">
-                      Detalle de productos
+                      ¿Qué incluye?
                     </p>
                     <!-- Características -->
                     <div id="uno" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                      <div class=" pb-4">
-                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 1</p> 
-                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 2</p> 
+                      <div class="pb-4">
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Redacción de textos.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Diseño gráfico en artes.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Segmentación de audiencia.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Respuesta a comentarios en post.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Reporte mensual de resultados.</p> 
                       </div>
                     </div>
                   </div>
-                  <p class="texto-gris nota">*Anticipa tu pedido con 24h</p>
+                  <p class="texto-gris nota">*El costo mensual NO incluye IVA, fotografías,<br>imágenes de paga ni archivos editables.</p>
                 </div>
               </div>
               <!-- Segunda caja -->
               <div class="col-md-4 col-12 py-md-0 py-4">
                 <div class="caja-producto py-1 px-3 pt-md-4 pt-0">
-                  <img src="img/redes.svg" class="py-4">
-                  <h5 class="texto-negro">The Mix Box</h5>
-                  <h2 class="py-2">$00.00</h2>
-                  <p class="texto-gris">Disfruta de tu estilo de vida</p>
+                  <img src="img/foco.png" class="py-4" width="50px">
+                  <h4 class="texto-turquesa">Medium</h4>
+                  <h2 class="pt-2 pb-3 font-weight-bold texto-negro">$400.00</h2>
                   <!-- Beneficios -->
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>Manejo de 2 redes sociales.<br>(Facebook o Instagram)</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>3 Publicaciones semanales.<br>(Lunes a Viernes)</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>Generación de 1 campaña<br>pagada al mes.</p> 
+                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Generación de 1 material interactivo<br>al mes. (Miniclip o gif)</p> 
                   <!-- Botón -->
-                  <a href="" class="boton-turquesa my-2" style="width: 100%;">Lo quiero en mi vida</a>
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete MEDIUM de redes sociales." class="boton-turquesa my-2" style="width: 100%;">Lo quiero</a>
                   <!-- Detalles -->
                   <div class="accordion" id="accordionExample">
                     <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#dos" aria-expanded="true">
-                      Detalle de productos
+                      ¿Qué incluye?
                     </p>
                     <!-- Características -->
                     <div id="dos" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                      <div class=" pb-4">
-                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 1</p> 
-                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 2</p> 
+                      <div class="pb-4">
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Redacción de textos.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Diseño gráfico en artes.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Segmentación de audiencia.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Respuesta a comentarios en post.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Reporte mensual de resultados.</p> 
                       </div>
                     </div>
                   </div>
-                  <p class="texto-gris nota">*Anticipa tu pedido con 24h</p>
+                  <p class="texto-gris nota">*El costo mensual NO incluye IVA, fotografías,<br>imágenes de paga ni archivos editables.</p>
                 </div>
               </div>
               <!-- Tercera caja -->
               <div class="col-md-4 col-12">
                 <div class="caja-producto py-1 px-3">
-                  <img src="img/redes.svg" class="py-4">
-                  <h5 class="texto-negro">Home Wellness</h5>
-                  <h2 class="py-2">$00.00</h2>
-                  <p class="texto-gris">Cuatro paredes llenas de amor y bienestar</p>
+                  <img src="img/foco.png" class="py-4" width="50px">
+                  <h4 class="texto-turquesa">Premium</h4>
+                  <h2 class="pt-2 pb-3 font-weight-bold texto-negro">$750.00</h2>
                   <!-- Beneficios -->
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-0"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
-                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Lorem Ipsum is simply dummy text</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>Manejo de 3 redes sociales.<br>(Facebook - Instagram - Opcional)</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>7 Publicaciones semanales.<br>(Lunes a Domingo)</p> 
+                  <p class="texto-gris mb-3"><span class="pr-3">•</span>Generación de 2 campañas<br>pagadas al mes.</p> 
+                  <p class="texto-gris mb-4"><span class="pr-3">•</span>Generación de 1 video promocional<br>al mes.</p> 
                   <!-- Botón -->
-                  <a href="" class="boton-blanco my-2" style="width: 100%;">Lo quiero en casa</a>
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete PREMIUM de redes sociales." class="boton-blanco my-2" style="width: 100%;">Lo quiero</a>
                   <!-- Detalles -->
                   <div class="accordion" id="accordionExample">
                     <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#tres" aria-expanded="true">
-                      Detalle de productos
+                      ¿Qué incluye?
                     </p>
                     <!-- Características -->
                     <div id="tres" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                      <div class=" pb-4">
-                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 1</p> 
-                        <p class="texto-gris mb-0"><span class="pr-3">•</span>Detalle 2</p> 
+                      <div class="pb-4">
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Redacción de textos.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Diseño gráfico en artes.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Segmentación de audiencia.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Respuesta a comentarios en post.</p> 
+                        <p class="texto-gris mb-1"><span class="pr-3">•</span>Reporte mensual de resultados.</p> 
                       </div>
                     </div>
                   </div>
-                  <p class="texto-gris nota">*Anticipa tu pedido con 24h</p>
+                  <p class="texto-gris nota">*El costo mensual NO incluye IVA, fotografías,<br>imágenes de paga ni archivos editables.</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sección - Portafolio -->
+        <section class="row bg-turquesa" id="portafolio">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 text-center">
+                <h2 class="texto-blanco mt-0">Portafolio</h2>
+                <hr class="linea-titular-blanco">
+                <div class="row justify-content-center pt-4">
+                  <div class="col-12 text-center mb-md-0 mb-2">
+                    <p class="texto-blanco">
+                      Somos una agencia integral
+                    </p>
+                  </div>
+                </div>  
               </div>
             </div>
           </div>
@@ -403,13 +415,13 @@
                 <p class="text-muted mb-5 mt-3">¿Estás listo para comenzar tu próximo proyecto juntos?<br>¡Llámanos o envíanos un correo electrónico!</p>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-4 ml-auto text-center">
-                <a target="_blank" href="#" class="contactos"><img src="img/iconos/telefono.svg" class="mb-3 mover2">
-                <div>(+593) 099-256-8518</div> <br></a>
+            <div class="row justify-content-center">
+              <div class="col-md-4 text-center pb-md-0 pb-5">
+                <a href="#contactos" class="contactos"><img src="img/iconos/telefono.svg" class="mb-3 mover2">
+                <div>(+593) 099-256-8518</div></a>
               </div>
-              <div class="col-md-4 mr-auto text-center">
-                <a target="_blank" href="mailto:creavicdesign@hotmail.com" class="contactos">
+              <div class="col-md-4 text-center">
+                <a href="mailto:creavicdesign@hotmail.com" class="contactos">
                   <img src="img/iconos/correo.svg" class="mb-3 mover2">
                   <div>creavicdesign@hotmail.com</div>
                 </a>
@@ -421,13 +433,13 @@
         <!-- Formulario -->
         <section class="row justify-content-center bg-turquesa">
           <div class="col-md-8 col-12">
-            <h5 class="text-center">¡Hola<span id="escrito"></span>!</h5>
+            <h4 class="text-center">¡Hola<span id="escrito"></span>!</h4>
             <p class="mb-4 text-center">Si deseas déjanos tu requerimiento por aquí.</p>
-            <div class="form-group">
+            <div class="form-group mb-0">
               <div class="row justify-content-center mb-3">
                   <div class="col-md-5 col-12 mb-md-0 mb-3">
                       <input id="nombre" name="nombre" class="form-control" type="text" onchange="comprobando()" onkeyup="escribiendo()" required>
-                      <label for="nombre" id="nombre2" class="label-holder">Email</label>
+                      <label for="nombre" id="nombre2" class="label-holder">Nombre</label>
                   </div>
                   <div class="col-md-5 col-12">
                       <input id="correo" name="correo" class="form-control" type="email" onchange="comprobando2()" required>
@@ -439,7 +451,7 @@
                   <textarea class="form-control" id="mensaje" name="mensaje" rows="5" onchange="comprobando3()" required></textarea><br>
                   <label for="mensaje" id="mensaje2" class="label-holder">Mensaje</label>
                   <span id="respuesta"></span>
-                  <button class="boton-blanco px-5" id="submit">Enviar</button>
+                  <a class="boton-blanco px-5" id="enviar">Enviar</a>
                 </div> 
               </div>
             </div>
@@ -538,7 +550,7 @@
         }
       }
 
-      document.querySelector("#submit").addEventListener("click",function(){
+      document.querySelector("#enviar").addEventListener("click",function(){
         var celular = "593992568518";
         var nombre = document.querySelector("#nombre").value;
         var correo = document.querySelector("#correo").value;
@@ -550,7 +562,7 @@
         "%0A*Mensaje:*%0A" + mensaje;
         if (nombre === "" || correo === "" || mensaje === "") {
           respuesta.classList.add("fail");
-          respuesta.innerHTML = "Por favor, completa los campos faltantes.";
+          respuesta.innerHTML = "Por favor, completa todos los campos.";
           return false;
         }
         respuesta.classList.remove("fail");
