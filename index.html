@@ -46,7 +46,7 @@
               <button type="button" class="close" data-dismiss="modal" onClick="_gaq.push(['_trackEvent', 'PopUp', 'Cerrar', 'click'])">&times;</button> <br>
               <h5 class="font-weight-bold pt-1 pb-2">¿Deseas adquirir alguno de nuestros servicios?</h5>
               <p>Comunícate directamente con nosotros para ayudarte con más información.</p>
-              <a data-scroll href="#contactos" class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();" onClick="_gaq.push(['_trackEvent', 'PopUp', 'Contactar', 'click'])">Contactar</a>
+              <a data-scroll href="#contactos" class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();" onclick="gtag('event', 'Click', { 'event_category': 'Modal', 'event_label': 'Contactar'});">Contactar</a>
             </div>
           </div>
         </div>
@@ -56,7 +56,7 @@
       <header>
         <!-- Menú -->
         <nav class="navbar navbar-expand-md row px-md-5 px-3 py-3">
-          <a data-scroll class="navbar-brand js-scroll-trigger" href="#inicio" onClick="ga('send','event', 'Menu','Click','Inicio');">
+          <a data-scroll class="navbar-brand js-scroll-trigger" href="#inicio" onclick="ga('send','event', 'Menu','Click','Inicio');">
             <img class="img-fluid logo" src="img/logo.svg" width="43px">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,7 +68,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto my-2 my-md-0">
               <li class="nav-item">
-                <a data-scroll class="nav-link js-scroll-trigger" href="#nosotros" onClick="gtag('event', 'clic', { 'event_category': 'Menú', 'event_label': 'Nosotros', 'value': '0'});">NOSOTROS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#nosotros" onClick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'Nosotros'});">NOSOTROS</a>
               </li>
               <li class="nav-item">
                 <a data-scroll class="nav-link js-scroll-trigger" href="#servicios" onClick="_gaq.push(['_trackEvent', 'Menú', 'Servicios', 'click'])">SERVICIOS</a>
