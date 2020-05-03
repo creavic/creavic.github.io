@@ -18,7 +18,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-165386493-1');
     </script>
     
@@ -44,10 +43,10 @@
           <br> <br> <br> <br>
           <div class="modal-content">
             <div class="modal-body">
-              <button type="button" class="close" data-dismiss="modal">&times;</button> <br>
+              <button type="button" class="close" data-dismiss="modal" onClick="_gaq.push(['_trackEvent', 'PopUp', 'Cerrar', 'click'])">&times;</button> <br>
               <h5 class="font-weight-bold pt-1 pb-2">¿Deseas adquirir alguno de nuestros servicios?</h5>
               <p>Comunícate directamente con nosotros para ayudarte con más información.</p>
-              <a href="#contactos" class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();">Contactar</a>
+              <a data-scroll href="#contactos" class="boton-turquesa px-5 mt-3 mb-4" onclick="listo();" onClick="_gaq.push(['_trackEvent', 'PopUp', 'Contactar', 'click'])">Contactar</a>
             </div>
           </div>
         </div>
@@ -57,7 +56,7 @@
       <header>
         <!-- Menú -->
         <nav class="navbar navbar-expand-md row px-md-5 px-3 py-3">
-          <a data-scroll class="navbar-brand js-scroll-trigger" href="#inicio" onClick="_gaq.push(['_trackEvent', 'Menú', 'Inicio', 'home', 0])">
+          <a data-scroll class="navbar-brand js-scroll-trigger" href="#inicio" onClick="_gaq.push(['_trackEvent', 'Menú', 'Inicio', 'click'])">
             <img class="img-fluid logo" src="img/logo.svg" width="43px">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -69,19 +68,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto my-2 my-md-0">
               <li class="nav-item">
-                <a data-scroll class="nav-link js-scroll-trigger" href="#nosotros">NOSOTROS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#nosotros" onClick="_gaq.push(['_trackEvent', 'Menú', 'Nosotros', 'click'])">NOSOTROS</a>
               </li>
               <li class="nav-item">
-                <a data-scroll class="nav-link js-scroll-trigger" href="#servicios">SERVICIOS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#servicios" onClick="_gaq.push(['_trackEvent', 'Menú', 'Servicios', 'click'])">SERVICIOS</a>
               </li>
               <li class="nav-item">
-                <a data-scroll class="nav-link js-scroll-trigger" href="#portafolio">PORTAFOLIO</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#portafolio" onClick="_gaq.push(['_trackEvent', 'Menú', 'Portafolio', 'click'])">PORTAFOLIO</a>
               </li>
               <li class="nav-item">
-                <a data-scroll class="nav-link js-scroll-trigger" href="#clientes">CLIENTES</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#clientes" onClick="_gaq.push(['_trackEvent', 'Menú', 'Clientes', 'click'])">CLIENTES</a>
               </li>
               <li class="nav-item">
-                <a data-scroll class="nav-link js-scroll-trigger" href="#contactos">CONTACTOS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#contactos" onClick="_gaq.push(['_trackEvent', 'Menú', 'Contactos', 'click'])">CONTACTOS</a>
               </li>
             </ul>
           </div>
@@ -99,7 +98,7 @@
               </div>
               <div class="col-md-8 align-self-baseline">
                 <p class="texto-blanco mb-5">¿Estás seguro de invertir en tu marca?</p>
-                <a href="#nosotros" class="boton-turquesa px-5">¡Por supuesto!</a>
+                <a data-scroll href="#nosotros" class="boton-turquesa px-5" onClick="_gaq.push(['_trackEvent', 'Inicio', 'Por supuesto', 'click'])">¡Por supuesto!</a>
               </div>
             </div>
           </div>
@@ -138,7 +137,7 @@
             <hr class="linea-titular-turquesa">
             <div class="row justify-content-center">
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Imagen corporativa', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/corporativo.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Imagen Corporativa</h3>
@@ -147,7 +146,7 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Editorial', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/editorial.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Editorial</h3>
@@ -156,7 +155,7 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Multimedia', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/multimedia.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Multimedia</h3>
@@ -165,7 +164,7 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Fotografía', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/fotografia.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Fotografía</h3>
@@ -174,7 +173,7 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Modelado 3D', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/modelado.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Modelado 3D</h3>
@@ -183,7 +182,7 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Audiovisual', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/audiovisual.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Audiovisual</h3>
@@ -192,16 +191,16 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Web', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/web.svg" class="mb-4 mover">
-                    <h3 class="h4 mb-2">Web</h3>
+                    <h3 class="h4 mb-2">Web UX / UI</h3>
                     <p class="text-muted mb-0">Desarrollo de páginas web responsive.</p>
                   </div>
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Social media', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/social-media.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">Social Media</h3>
@@ -210,7 +209,7 @@
                 </a>
               </div>
               <div class="col-md-4 text-center">
-                <a onclick="abrir()">
+                <a onclick="abrir()" onClick="_gaq.push(['_trackEvent', 'Servicios', 'Seo-Sem', 'click'])">
                   <div class="mt-5">
                     <img src="img/iconos/seo-sem.svg" class="mb-4 mover">
                     <h3 class="h4 mb-2">SEO & SEM</h3>
@@ -225,7 +224,7 @@
         <!-- Sección de Paquetes -->
         <section class="row bg-gris">
           <div class="container text-center">
-            <h3 class="texto-negro pb-4">Contrata tu paquete de redes sociales</h3>
+            <h3 class="texto-negro pb-4">Contrata tu paquete de Social Media</h3>
             <!-- Paquetes de Redes -->
             <div class="row justify-content-center align-items-center mt-3">
               <!-- Primera caja -->
@@ -240,7 +239,7 @@
                   <p class="texto-gris mb-3"><span class="pr-3">•</span>Generación de 1 campaña<br>pagada al mes.</p> 
                   <p class="texto-gris mb-4"><span class="pr-3">•</span>Generación de 1 gif al mes.</p> 
                   <!-- Botón -->
-                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete BASIC de redes sociales." class="boton-blanco my-2" style="width: 100%;">Lo quiero</a>
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete BASIC de redes sociales." class="boton-blanco my-2" style="width: 100%;" onClick="_gaq.push(['_trackEvent', 'Paquetes', 'Basic', 'click'])">Lo quiero</a>
                   <!-- Detalles -->
                   <div class="accordion" id="accordionExample">
                     <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#uno" aria-expanded="true">
@@ -272,7 +271,7 @@
                   <p class="texto-gris mb-3"><span class="pr-3">•</span>Generación de 1 campaña<br>pagada al mes.</p> 
                   <p class="texto-gris mb-4"><span class="pr-3">•</span>Generación de 1 material interactivo<br>al mes. (Miniclip o gif)</p> 
                   <!-- Botón -->
-                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete MEDIUM de redes sociales." class="boton-turquesa my-2" style="width: 100%;">Lo quiero</a>
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete MEDIUM de redes sociales." class="boton-turquesa my-2" style="width: 100%;" onClick="_gaq.push(['_trackEvent', 'Paquetes', 'Medium', 'click'])">Lo quiero</a>
                   <!-- Detalles -->
                   <div class="accordion" id="accordionExample">
                     <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#dos" aria-expanded="true">
@@ -304,7 +303,7 @@
                   <p class="texto-gris mb-3"><span class="pr-3">•</span>Generación de 2 campañas<br>pagadas al mes.</p> 
                   <p class="texto-gris mb-4"><span class="pr-3">•</span>Generación de 1 video promocional<br>al mes.</p> 
                   <!-- Botón -->
-                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete PREMIUM de redes sociales." class="boton-blanco my-2" style="width: 100%;">Lo quiero</a>
+                  <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, quiero contratar el paquete PREMIUM de redes sociales." class="boton-blanco my-2" style="width: 100%;" onClick="_gaq.push(['_trackEvent', 'Paquetes', 'Premiun', 'click'])">Lo quiero</a>
                   <!-- Detalles -->
                   <div class="accordion" id="accordionExample">
                     <p class="pt-3 pb-2 detalles collapsed" data-toggle="collapse" data-target="#tres" aria-expanded="true">
@@ -341,7 +340,7 @@
                       ¿Aún no estas convencido de encargarnos de tu marca?
                     </h5>
                     <h6 class="py-2">Visita nuestro portafolio</h6>
-                    <a target="_blank" href="vide/portafolio.pdf" class="boton-blanco px-5">Aquí</a>
+                    <a target="_blank" href="vide/portafolio.pdf" class="boton-blanco px-5" onClick="_gaq.push(['_trackEvent', 'Portafolio', 'Aquí', 'click'])">Aquí</a>
                   </div>
                   <div class="col-md-10 col-12">
                     <h5 class="texto-blanco">
@@ -442,7 +441,7 @@
                 <div>(+593) 099-256-8518</div></a>
               </div>
               <div class="col-md-4 text-center">
-                <a href="mailto:creavicdesign@hotmail.com" class="contactos">
+                <a href="mailto:creavicdesign@hotmail.com" class="contactos" onClick="_gaq.push(['_trackEvent', 'Contactos', 'Correo', 'click'])">
                   <img src="img/iconos/correo.svg" class="mb-3 mover2">
                   <div>creavicdesign@hotmail.com</div>
                 </a>
@@ -472,7 +471,7 @@
                   <textarea class="form-control mensaje" id="mensaje" name="mensaje" rows="5" onchange="comprobando3()" required></textarea><br>
                   <label for="mensaje" id="mensaje2" class="label-holder">Mensaje</label>
                   <span id="respuesta"></span>
-                  <a class="boton-blanco px-5" id="enviar">Enviar</a>
+                  <a class="boton-blanco px-5" id="enviar" onClick="_gaq.push(['_trackEvent', 'Formulario', 'Enviar', 'click'])">Enviar</a>
                 </div> 
               </div>
             </div>
@@ -481,16 +480,16 @@
     
         <!-- Redes Sociales -->
         <section class="row justify-content-center bg-blanco-redes">
-          <a target="_blank" href="https://es-la.facebook.com/creavicdesign/"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimaf">
+          <a target="_blank" href="https://es-la.facebook.com/creavicdesign/" onClick="_gaq.push(['_trackEvent', 'Footer', 'Facebook', 'click'])"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimaf">
             <path d="M448,80v352c0,26.5-21.5,48-48,48h-85.3V302.8h60.6l8.7-67.6h-69.3V192c0-19.6,5.4-32.9,33.5-32.9H384V98.7 c-6.2-0.8-27.4-2.7-52.2-2.7c-51.6,0-87,31.5-87,89.4v49.9H184v67.6h60.9V480H48c-26.5,0-48-21.5-48-48V80c0-26.5,21.5-48,48-48h352 C426.5,32,448,53.5,448,80z"/></svg>
           </a>
-          <a target="_blank" href="https://www.instagram.com/creavicdesign/?hl=es"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimai">
+          <a target="_blank" href="https://www.instagram.com/creavicdesign/?hl=es" onClick="_gaq.push(['_trackEvent', 'Footer', 'Instagram', 'click'])"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimai">
             <path d="M224.1,141c-63.6,0-114.9,51.3-114.9,114.9s51.3,114.9,114.9,114.9S339,319.5,339,255.9S287.7,141,224.1,141z M224.1,330.6 c-41.1,0-74.7-33.5-74.7-74.7s33.5-74.7,74.7-74.7s74.7,33.5,74.7,74.7S265.2,330.6,224.1,330.6L224.1,330.6z M370.5,136.3 c0,14.9-12,26.8-26.8,26.8c-14.9,0-26.8-12-26.8-26.8s12-26.8,26.8-26.8S370.5,121.5,370.5,136.3z M446.6,163.5 c-1.7-35.9-9.9-67.7-36.2-93.9c-26.2-26.2-58-34.4-93.9-36.2c-37-2.1-147.9-2.1-184.9,0C95.8,35.1,64,43.3,37.7,69.5 s-34.4,58-36.2,93.9c-2.1,37-2.1,147.9,0,184.9c1.7,35.9,9.9,67.7,36.2,93.9s58,34.4,93.9,36.2c37,2.1,147.9,2.1,184.9,0 c35.9-1.7,67.7-9.9,93.9-36.2c26.2-26.2,34.4-58,36.2-93.9C448.7,311.3,448.7,200.5,446.6,163.5L446.6,163.5z M398.8,388 c-7.8,19.6-22.9,34.7-42.6,42.6c-29.5,11.7-99.5,9-132.1,9s-102.7,2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6 c-11.7-29.5-9-99.5-9-132.1s-2.6-102.7,9-132.1c7.8-19.6,22.9-34.7,42.6-42.6c29.5-11.7,99.5-9,132.1-9s102.7-2.6,132.1,9 c19.6,7.8,34.7,22.9,42.6,42.6c11.7,29.5,9,99.5,9,132.1S410.5,358.6,398.8,388z"/></svg>
           </a> 
-          <a target="_blank" href="https://www.youtube.com/channel/UCBJT4YpZ9x7ai7k49aiwgkA"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimay">
+          <a target="_blank" href="https://www.youtube.com/channel/UCBJT4YpZ9x7ai7k49aiwgkA" onClick="_gaq.push(['_trackEvent', 'Footer', 'Youtube', 'click'])"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales encimay">
             <path d="M549.7,124.1c-6.3-23.7-24.8-42.3-48.3-48.6C458.8,64,288,64,288,64S117.2,64,74.6,75.5c-23.5,6.3-42,24.9-48.3,48.6 C14.9,167,14.9,256.4,14.9,256.4s0,89.4,11.4,132.3c6.3,23.6,24.8,41.5,48.3,47.8C117.2,448,288,448,288,448s170.8,0,213.4-11.5 c23.5-6.3,42-24.2,48.3-47.8c11.4-42.9,11.4-132.3,11.4-132.3S561.1,167,549.7,124.1z M232.1,337.6V175.2l142.7,81.2L232.1,337.6 L232.1,337.6z"/></svg>
           </a>
-          <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, estoy interezado en "><svg viewBox="0 0 576 512" class="img-fluid redes-sociales2 encimaw">
+          <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, estoy interezado en " onClick="_gaq.push(['_trackEvent', 'Footer', 'Whatsapp', 'click'])"><svg viewBox="0 0 576 512" class="img-fluid redes-sociales2 encimaw">
             <path d="M380.9,97.1C339,55.1,283.2,32,223.9,32c-122.4,0-222,99.6-222,222c0,39.1,10.2,77.3,29.6,111L0,480l117.7-30.9
             c32.4,17.7,68.9,27,106.1,27h0.1c122.3,0,224.1-99.6,224.1-222C448,194.8,422.8,139.1,380.9,97.1z M223.9,438.7
             c-33.2,0-65.7-8.9-94-25.7l-6.7-4l-69.8,18.3L72,359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2c0-101.7,82.8-184.5,184.6-184.5
@@ -509,7 +508,7 @@
       </footer>
 
       <!-- Whatsapp fijo -->
-      <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, estoy interezado en " class="acceso">
+      <a target="_blank" href="https://api.whatsapp.com/send?phone=593992568518&amp;text=¡Hola!, estoy interezado en " class="acceso" onClick="_gaq.push(['_trackEvent', 'Fijo', 'Whatsapp', 'click'])">
         <img src="img/iconos/whatsapp.svg">
       </a>
     </div>
@@ -517,7 +516,7 @@
     <!-- Scroll smooth -->
     <script src="css/smooth-scroll.min.js"></script>
 
-    <!-- Funciones: Precarga / Scroll / Pop up / Nombre / Inputs / Whastsapp -->
+    <!-- Funciones: Precarga / Scroll / Pop up / Nombre / Inputs / Whatsapp -->
     <script>
       window.onload = function(){
         var cargar = document.getElementById('contenido');
