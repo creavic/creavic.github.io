@@ -136,6 +136,9 @@ nav {
 button:focus {
     outline: none;
 }
+video:focus {
+    outline: none;
+}
 .fondo-arriba {
     height: 100vh;
     background-image: url(../vide/fondo.jpg);
@@ -202,7 +205,7 @@ a:hover .mover {
     border-radius: 8px;
     box-shadow: var(--tx-gris) 0px 4px 12px;
     background-color: var(--bg-blanco);
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease;
 }
 .caja-producto:hover {
     box-shadow: var(--bg-turqueza) 0px 4px 12px;
@@ -229,6 +232,7 @@ a:hover {
     background-color: var(--bt-blanco);
 }
 .boton-turquesa {
+    cursor: pointer;
     display: inline-block;
     color: var(--tx-blanco);
     font-size: 16px;

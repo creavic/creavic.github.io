@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
      <!-- Icono de pestaña -->
-    <link rel="icon" href="img/foco.png">
+    <link rel="icon" href="vide/foco.png">
 
     <!-- Required meta tags -->
     <meta charset="UTF-8">
@@ -45,7 +45,7 @@
       <header>
         <!-- Menú -->
         <nav class="navbar navbar-expand-md row px-md-5 px-3 py-3">
-          <a class="navbar-brand js-scroll-trigger" href="#inicio">
+          <a data-scroll class="navbar-brand js-scroll-trigger" href="#inicio">
             <img class="img-fluid logo" src="img/logo.svg" width="43px">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,19 +57,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto my-2 my-md-0">
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#nosotros">NOSOTROS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#nosotros">NOSOTROS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#servicios">SERVICIOS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#servicios">SERVICIOS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#portafolio">PORTAFOLIO</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#portafolio">PORTAFOLIO</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#clientes">CLIENTES</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#clientes">CLIENTES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#contactos">CONTACTOS</a>
+                <a data-scroll class="nav-link js-scroll-trigger" href="#contactos">CONTACTOS</a>
               </li>
             </ul>
           </div>
@@ -324,10 +324,19 @@
                 <h2 class="texto-blanco mt-0">Portafolio</h2>
                 <hr class="linea-titular-blanco">
                 <div class="row justify-content-center pt-4">
-                  <div class="col-12 text-center mb-md-0 mb-2">
-                    <p class="texto-blanco">
-                      Somos una agencia integral
-                    </p>
+                  <div class="col-12 text-center pb-5">
+                    <h5 class="texto-blanco">
+                      ¿Aún no estas convencido de encargarnos de tu marca?
+                    </h5>
+                    <h6 class="py-2">Visita nuestro portafolio</h6>
+                    <a href="vide/portafolio.pdf" class="boton-blanco px-5">Aquí</a>
+                  </div>
+                  <div class="col-md-10 col-12">
+                    <h5 class="texto-blanco">
+                      ¿Ya viste nuestro Reel?
+                    </h5>
+                    <h6 class="py-2">¡Dale Play!</h6>
+                    <video src=vide/reel.mp4 class="img-fluid" controls></video>
                   </div>
                 </div>  
               </div>
@@ -493,13 +502,21 @@
       </a>
     </div>
 
-    <!-- Funciones: Precarga / Pop up / Nombre / Inputs / Whastsapp -->
+    <!-- Scroll smooth -->
+    <script src="css/smooth-scroll.min.js"></script>
+
+    <!-- Funciones: Precarga / Scroll / Pop up / Nombre / Inputs / Whastsapp -->
     <script>
       window.onload = function(){
         var cargar = document.getElementById('contenido');
         cargar.style.display = 'none';
         cargar.style.opacity = '0';
       }
+
+      var scroll = new SmoothScroll('a[href*="#"]', {
+	      speed: 1000,
+        offset: 70
+      });
 
       function abrir(){
         $(document).ready(function() {
@@ -572,7 +589,6 @@
       });      
     </script>
 
-    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
