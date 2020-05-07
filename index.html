@@ -12,6 +12,9 @@
     <!-- Mis Estilos -->
     <link rel="stylesheet" href="css/estilos.css">
 
+    <!-- Libreria de Animated -->
+    <link rel="stylesheet" href="css/estilos.css">
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165386493-1"></script>
     <script>
@@ -550,7 +553,7 @@
       function comprobando(){
         var valor = document.getElementById("nombre").value;
         if(valor!==""){
-          document.getElementById("nombre").className = "llenoInput nombre";
+          document.getElementById("nombre").className = "llenoInput nombre-lleno";
           document.getElementById("nombre2").className = "llenoLabel";
         } else {
           document.getElementById("nombre").className = "form-control nombre";
@@ -560,7 +563,7 @@
       function comprobando2(){
         var valor2 = document.getElementById("correo").value;
         if(valor2!==""){
-          document.getElementById("correo").className = "llenoInput correo";
+          document.getElementById("correo").className = "llenoInput correo-lleno";
           document.getElementById("correo2").className = "llenoLabel"; 
         } else {
           document.getElementById("correo").className = "form-control correo";
@@ -570,7 +573,7 @@
       function comprobando3(){
         var valor3 = document.getElementById("mensaje").value;
         if(valor3!==""){
-          document.getElementById("mensaje").className = "llenoArea mensaje";
+          document.getElementById("mensaje").className = "llenoArea mensaje-lleno";
           document.getElementById("mensaje2").className = "llenoLabel"; 
         } else {
           document.getElementById("mensaje").className = "form-control mensaje";
