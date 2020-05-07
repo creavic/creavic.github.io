@@ -66,6 +66,7 @@ nav {
     position: fixed !important;
     z-index: 1;
     backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 .logo {
     width: 70px;
