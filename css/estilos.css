@@ -147,6 +147,7 @@ video:focus {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .linea-titular-blanco {
     display: inline-block;
