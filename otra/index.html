@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <!-- Icono de pestaña -->  
+        <link rel="icon" href="img/icono.svg">    
+
+        <!-- Título de pestaña / Descripción en motores / Palabras clave -->  
+        <title>exhibidos | Catálogo online de emprendimientos</title>
+        <meta name="description" content="Aquí podrás ver una gran variedad de productos y/o servicios de todo tipo de emprendimientos y contactar directamente al dueño para solicitar más información y/o realizar la compra.">
+        <meta name="keywords" content="emprendimientos, servicios, productos, compra, venta, catálogo, online, exhibidos">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- Mis Estilos -->  
+        <link rel="stylesheet" href="css/estilos.css"> 
+
+        <!-- Datos de Excel -->  
+        <script src="js/razones.js"></script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178423936-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-178423936-1');
+        </script>
+    </head>
+
+    <body>
+        <!-- Animación de Precarga -->
+        <div id="cargar">
+            <h1 class="frase">Cargando</h1> 
+            <div class="cargando"></div>
+        </div>
+        
+        <!-- Menú -->
+        <header class="menu">
+            <nav class="navbar">
+                <div class="container">
+                    <!-- Logo - izquierda -->
+                    <a href="index.html" class="logo">
+                        <img src="img/logo.svg">
+                    </a>
+                    <!-- Modo -->
+                    <div class="caja-modo">
+                        <input type="checkbox" id="modo" onclick="CambioModo();">
+                        <label for="modo" class="circulo-modo"></label>
+                    </div>
+                    <!-- Botón - Mobile -->
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'BOTON'});"></button>
+                    <!-- Menú - derecha -->
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav border-top">
+                            <!-- Categoría 1 -->
+                            <div class="pt-4">
+                                <a href="#" class="subcategoria todo" category="all" data-toggle="collapse" data-target=".navbar-collapse" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'TODO'});">Más buscados</a>
+                            </div>
+                            <!-- Categoría 2 -->
+                            <div class="accordion" id="accordionExample">
+                                <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m2" aria-expanded="true">
+                                    <img src="img/comida.svg" class="iconitos">
+                                    Alimentos
+                                </a>
+                                <!-- Subcategorias -->
+                                <div id="m-m2" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <a href="#" class="subcategoria alimentosTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria alimentos" category="rapida" data-toggle="collapse" data-target=".navbar-collapse">Comida rápida</a>
+                                    <a href="#" class="subcategoria alimentos" category="postres" data-toggle="collapse" data-target=".navbar-collapse">Postres</a>
+                                    <div class="my-2"></div>      
+                                </div>
+                            </div>
+                            <!-- Categoría 3 -->
+                            <div class="accordion" id="accordionExample">
+                                <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m3" aria-expanded="true">
+                                    <img src="img/belleza.svg" class="iconitos">
+                                    Belleza
+                                </a>
+                                <!-- Subcategorias -->
+                                <div id="m-m3" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <a href="#" class="subcategoria bellezaTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria belleza" category="maquillaje" data-toggle="collapse" data-target=".navbar-collapse">Maquillaje</a>
+                                    <a href="#" class="subcategoria belleza" category="cremas" data-toggle="collapse" data-target=".navbar-collapse">Cremas</a>
+                                    <a href="#" class="subcategoria belleza" category="salones" data-toggle="collapse" data-target=".navbar-collapse">Salones</a>
+                                    <div class="my-2"></div>       
+                                </div>
+                            </div>
+                            <!-- Categoría 4 -->
+                            <div class="accordion" id="accordionExample">
+                                <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m4" aria-expanded="true">
+                                    <img src="img/ropa.svg" class="iconitos">
+                                    Ropa
+                                </a>
+                                <!-- Subcategorias -->
+                                <div id="m-m4" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <a href="#" class="subcategoria ropaTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria ropa" category="calentadores" data-toggle="collapse" data-target=".navbar-collapse">Calentadores</a>
+                                    <a href="#" class="subcategoria ropa" category="pijamas" data-toggle="collapse" data-target=".navbar-collapse">Pijamas</a>
+                                    <a href="#" class="subcategoria ropa" category="zapatos" data-toggle="collapse" data-target=".navbar-collapse">Zapatos</a>
+                                    <div class="my-2"></div>       
+                                </div>
+                            </div>
+                            <!-- Categoría 5 -->
+                            <div class="accordion" id="accordionExample">
+                                <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m5" aria-expanded="true">
+                                    <img src="img/educacion.svg" class="iconitos">
+                                    Educación
+                                </a>
+                                <!-- Subcategorias -->
+                                <div id="m-m5" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <a href="#" class="subcategoria educacionTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria educacion" category="tutorias" data-toggle="collapse" data-target=".navbar-collapse">Tutorias</a>
+                                    <a href="#" class="subcategoria educacion" category="utiles" data-toggle="collapse" data-target=".navbar-collapse">Útiles escolares</a>
+                                    <div class="my-2"></div>       
+                                </div>
+                            </div>
+                            <!-- Categoría 6 -->
+                            <div class="accordion" id="accordionExample">
+                                <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m6" aria-expanded="true">
+                                    <img src="img/actividades.svg" class="iconitos">
+                                    Actividades
+                                </a>
+                                <!-- Subcategorias -->
+                                <div id="m-m6" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <a href="#" class="subcategoria actiTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria acti" category="defensa" data-toggle="collapse" data-target=".navbar-collapse">Defensa personal</a>
+                                    <a href="#" class="subcategoria acti" category="gimnasio" data-toggle="collapse" data-target=".navbar-collapse">Gimnasio</a> 
+                                    <div class="my-2"></div>       
+                                </div>
+                            </div>
+                            <!-- Categoría 7 -->
+                            <div class="accordion pb-3" id="accordionExample">
+                                <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m7" aria-expanded="true">
+                                    <img src="img/servicios.svg" class="iconitos"> 
+                                    Servicios
+                                </a>
+                                <!-- Subcategorias -->
+                                <div id="m-m7" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                    <a href="#" class="subcategoria serviciosTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria servicios" category="publicidad" data-toggle="collapse" data-target=".navbar-collapse">Publicitarios</a>
+                                    <a href="#" class="subcategoria servicios" category="eventos" data-toggle="collapse" data-target=".navbar-collapse">Eventos</a>
+                                    <div class="my-2"></div>       
+                                </div>
+                            </div>
+                             <!-- Contáctame -->
+                            <div class="text-center border-top py-4">
+                                <!-- Razón 1 -->
+                                <h5 class="tx-negro tx-medio mb-3">¿Deseas un espacio para tu emprendimiento?</h5>
+                                <!-- Botón -->
+                                <div class="text-center">
+                                    <a href="https://api.whatsapp.com/send?phone=593992568518&text=¡Hola! Deseo un espacio para mi emprendimiento. ¿Me pueden ayudar con más información?" target="blank" class="btn bt-agregar mt-0 mb-5" onclick="gtag('event', 'Click', { 'event_category': 'WhatsApp', 'event_label': 'Arriba'});">
+                                        <img src="img/manito.svg" class="mr-1" width="21px">
+                                        Más información
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Contenido -->
+        <main>
+            <!-- Submenú Desktop -->
+            <section class="submenu-d" id="submenu">
+                <h3 class="tx-medio" style="margin-bottom: 25px;">Categorias</h3>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Categoría 1 -->
+                        <a href="#" class="subcategoria todo" category="all" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'TODO'});">Más buscados</a>
+                        <!-- Categoría 2 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m2" aria-expanded="true">
+                                <img src="img/comida.svg" class="iconitos">
+                                Alimentos
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m2" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria alimentosTodo">- Ver Todo -</a>
+                                <a href="#" class="subcategoria alimentos" category="rapida">Comida rápida</a>
+                                <a href="#" class="subcategoria alimentos" category="postres">Postres</a>
+                                <div class="my-2"></div>      
+                            </div>
+                        </div>
+                        <!-- Categoría 3 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m3" aria-expanded="true">
+                                <img src="img/belleza.svg" class="iconitos">
+                                Belleza
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m3" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria bellezaTodo">- Ver Todo -</a>
+                                <a href="#" class="subcategoria belleza" category="maquillaje">Maquillaje</a>
+                                <a href="#" class="subcategoria belleza" category="cremas">Cremas</a>
+                                <a href="#" class="subcategoria belleza" category="salones">Salones</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 4 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m4" aria-expanded="true">
+                                <img src="img/ropa.svg" class="iconitos">
+                                Ropa
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m4" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria ropaTodo">- Ver Todo -</a>
+                                <a href="#" class="subcategoria ropa" category="calentadores">Calentadores</a>
+                                <a href="#" class="subcategoria ropa" category="pijamas">Pijamas</a>
+                                <a href="#" class="subcategoria ropa" category="zapatos">Zapatos</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 5 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m5" aria-expanded="true">
+                                <img src="img/educacion.svg" class="iconitos">
+                                Educación
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m5" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria educacionTodo">- Ver Todo -</a>
+                                <a href="#" class="subcategoria educacion" category="tutorias">Tutorias</a>
+                                <a href="#" class="subcategoria educacion" category="utiles">Útiles escolares</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 6 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m6" aria-expanded="true">
+                                <img src="img/actividades.svg" class="iconitos">
+                                Actividades
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m6" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria actiTodo">- Ver Todo -</a>
+                                <a href="#" class="subcategoria acti" category="defensa">Defensa personal</a>
+                                <a href="#" class="subcategoria acti" category="gimnasio">Gimnasio</a> 
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 7 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m7" aria-expanded="true">
+                                <img src="img/servicios.svg" class="iconitos"> 
+                                Servicios
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m7" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria serviciosTodo">- Ver Todo -</a>
+                                <a href="#" class="subcategoria servicios" category="publicidad">Publicitarios</a>
+                                <a href="#" class="subcategoria servicios" category="eventos">Eventos</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tablero de productos -->
+            <section class="contenido">
+                <h3 class="text-center tx-medio">¡Esto es lo que tenemos <br class="d-block d-md-none">para ti!</h3>
+                    <!-- Productos -->
+                    <div class="row" id="catalogo"></div>
+            </section>
+
+            <!-- Razones -->
+            <section class="razones">
+                <div class="row justify-content-center text-center">
+                    <!-- Pregunta -->
+                    <div class="col-12 mb-4">
+                        <h3 class="tx-medio">¿Por qué comprar aquí?</h3>
+                    </div>
+                     <!-- Razones -->
+                    <div class="container" id="miCaja">
+                        <div class="row justify-content-center text-center">
+                            <!-- Razón 1 -->
+                            <div class="col-md-4 col-12">
+                                <img src="img/contacto.svg" class="mb-3" width="70px">
+                                <h5 class="tx-gris">Contacto directo con <br>el dueño/a del negocio.</h5>
+                            </div>
+                            <!-- Razón 2 -->
+                            <div class="col-md-4 col-12 my-md-0 my-4">
+                                <img src="img/dinero.svg" class="mb-3" width="70px">
+                                <h5 class="tx-gris">Posible flexibilidad <br>sobre precio marcado.</h5>
+                            </div>
+                            <!-- Razón 3 -->
+                            <div class="col-md-4 col-12">
+                                <img src="img/ayuda.svg" class="mb-3" width="70px">
+                                <h5 class="tx-gris">Contribuyes a mantener <br>los emprendimientos.</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contactarme -->
+            <section class="ingresar">
+                <div class="row justify-content-center text-center">
+                    <div class="container">
+                        <div class="row justify-content-center align-items-center text-center">
+                            <!-- Razón 1 -->
+                            <div class="col-lg-5 col-md-6 col-12">
+                                <h4 class="tx-negro tx-medio mb-md-0 mb-4">¿Deseas un espacio para tu emprendimiento?</h4>
+                            </div>
+                            <!-- Razón 2 -->
+                            <div class="col-lg-3 col-md-4 col-10">
+                                <a href="https://api.whatsapp.com/send?phone=593992568518&text=¡Hola! Deseo un espacio para mi emprendimiento. ¿Me pueden ayudar con más información?" target="blank" class="btn bt-agregar mt-0" onclick="gtag('event', 'Click', { 'event_category': 'WhatsApp', 'event_label': 'Abajo'});">
+                                    <img src="img/manito.svg" class="mr-1" width="21px">
+                                    Más información
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Pié de página -->
+        <footer class="derechos">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <!-- Redes - Mobile -->
+                    <div class="col-md-4 col-12 text-md-right text-center mb-2 d-md-none d-block">
+                        <a href="https://www.facebook.com/exhibidosec-108068851048219" target="blank" class="redes mr-1" onclick="gtag('event', 'Click', { 'event_category': 'Redes', 'event_label': 'Facebook'});">
+                            <img src="img/facebook.svg" width="25px">
+                        </a>
+                        <a href="https://www.instagram.com/exhibidos.ec" target="blank" class="redes" onclick="gtag('event', 'Click', { 'event_category': 'Redes', 'event_label': 'Instagram'});">
+                            <img src="img/instagram.svg" width="25px">
+                        </a>
+                    </div>
+                    <!-- Derechos -->
+                    <div class="col-md-8 col-12 text-md-left text-center">
+                        © 2020 exhibidos. Todos los derechos reservados.
+                    </div>
+                    <!-- Redes - Desktop -->
+                    <div class="col-md-4 col-12 text-md-right text-center d-md-block d-none">
+                        <a href="https://www.facebook.com/exhibidosec-108068851048219" target="blank" class="redes mr-1" onclick="gtag('event', 'Click', { 'event_category': 'Redes', 'event_label': 'Facebook'});">
+                            <img src="img/facebook.svg" width="25px">
+                        </a>
+                        <a href="https://www.instagram.com/exhibidos.ec" target="blank" class="redes" onclick="gtag('event', 'Click', { 'event_category': 'Redes', 'event_label': 'Instagram'});">
+                            <img src="img/instagram.svg" width="25px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modales-->
+        <div class="row" id="detalle"></div>
+
+        <!-- Funcionalidad de Precarga -->
+        <script>
+            window.onload = function(){
+              var cargar = document.getElementById('cargar');
+              cargar.style.opacity = '0';
+              cargar.style.display = 'none';
+            }
+        </script>
+
+        <!-- Funcionalidad de Modo -->
+        <script>
+            function CambioModo() {
+              if(document.getElementById("modo").checked==true){
+                document.querySelector("html").style.setProperty('--color-blanco', "#263238");
+                document.querySelector("html").style.setProperty('--tx-gris', "#a7a7a7");
+                document.querySelector("html").style.setProperty('--tx-negro', "#ffffff");
+                document.querySelector("html").style.setProperty('--fondo-gris', "#37474f");
+                document.querySelector("html").style.setProperty('--sombra-caja', "#00000043");
+              } else{
+                document.querySelector("html").style.setProperty('--color-blanco', "#ffffff");
+                document.querySelector("html").style.setProperty('--tx-gris', "#878787");
+                document.querySelector("html").style.setProperty('--tx-negro', "#000000");
+                document.querySelector("html").style.setProperty('--fondo-gris', "#f3f3f3");
+                document.querySelector("html").style.setProperty('--sombra-caja', "#34292721");
+              };
+              gtag('event', 'Click', { 'event_category': 'Modo', 'event_label': 'Dark-White'});
+            }
+        </script>
+
+        <!-- Funcionalidad de detectar visibilidad -->  
+        <script>
+            function cambiaVisibilidad(visible, elemento){
+                var mover = document.getElementById("submenu");
+                if(elemento.id, visible == true){
+                    mover.classList.add("moviendo");
+                } else {
+                    mover.classList.remove("moviendo");
+                }
+            }
+            var miDiv = document.getElementById("miCaja");
+            inViewportPartially(miDiv, cambiaVisibilidad);
+        </script>
+
+        <!-- Funcionalidad de replicar componentes -->
+        <script src="js/productos.js"></script>
+        <script src="js/detalle.js"></script>
+
+        <!-- Funcionalidad de filtro-categoria -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/filtro.js"></script>
+
+        <!-- Funcionalidad de Modal -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    </body>
+</html>
