@@ -21,6 +21,12 @@
         <link rel="stylesheet" href="css/estilos.css"> 
 
         <!-- Datos de Excel -->  
+        <script src="js/xlsx.full.min.js"></script>
+
+        <!-- Funcionalidad de replicar componentes -->
+        <script src="js/catalogo.js"></script>
+
+        <!-- Funcionalidad de mover el menú en desktop -->
         <script src="js/razones.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -60,7 +66,7 @@
                         <div class="navbar-nav border-top">
                             <!-- Categoría 1 -->
                             <div class="pt-4">
-                                <a href="#" class="subcategoria todo" category="all" data-toggle="collapse" data-target=".navbar-collapse" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'TODO'});">Más buscados</a>
+                                <a href="#" class="subcategoria todo" category="all" data-toggle="collapse" data-target=".navbar-collapse" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'TODO'});">Ver todo</a>
                             </div>
                             <!-- Categoría 2 -->
                             <div class="accordion" id="accordionExample">
@@ -70,7 +76,7 @@
                                 </a>
                                 <!-- Subcategorias -->
                                 <div id="m-m2" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                    <a href="#" class="subcategoria alimentosTodo" data-toggle="collapse" data-target=".navbar-collapse">- Ver Todo -</a>
+                                    <a href="#" class="subcategoria alimentosTodo" data-toggle="collapse" data-target=".navbar-collapse" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'Alimentos - Todo'});">- Ver Todo -</a>
                                     <a href="#" class="subcategoria alimentos" category="rapida" data-toggle="collapse" data-target=".navbar-collapse">Comida rápida</a>
                                     <a href="#" class="subcategoria alimentos" category="postres" data-toggle="collapse" data-target=".navbar-collapse">Postres</a>
                                     <div class="my-2"></div>      
@@ -174,7 +180,7 @@
                 <div class="row">
                     <div class="col-12">
                         <!-- Categoría 1 -->
-                        <a href="#" class="subcategoria todo" category="all" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'TODO'});">Más buscados</a>
+                        <a href="#" class="subcategoria todo" category="all" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'TODO'});">Ver todo</a>
                         <!-- Categoría 2 -->
                         <div class="accordion" id="accordionExample">
                             <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m2" aria-expanded="true">
@@ -399,10 +405,6 @@
             var miDiv = document.getElementById("miCaja");
             inViewportPartially(miDiv, cambiaVisibilidad);
         </script>
-
-        <!-- Funcionalidad de replicar componentes -->
-        <script src="js/productos.js"></script>
-        <script src="js/detalle.js"></script>
 
         <!-- Funcionalidad de filtro-categoria -->
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
