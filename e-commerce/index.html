@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <!-- Icono de pestaña -->  
+        <link rel="icon" href="img/icono.svg">    
+
+        <!-- Título de pestaña / Descripción en motores / Palabras clave -->  
+        <title>Herramientas industriales</title>
+        <meta name="description" content="Ofrecemos herramientas profesionales e industriales de alta calidad a un costo accesible para todos.">
+        <meta name="keywords" content="herramientas, industrial, productos, catálogo">
+        
+        <!-- Open graph --> 
+        <meta property="og:site_name" content="Herramientas industriales">
+        <meta property="og:title" content="Herramientas industriales">
+        <meta property="og:description" content="Ofrecemos herramientas profesionales e industriales de alta calidad a un costo accesible para todos.">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+        <!-- Mis Estilos -->  
+        <link rel="stylesheet" href="css/estilos.css"> 
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178423936-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-178423936-1');
+        </script>
+    </head>
+
+    <body>
+        <!-- Animación de Precarga -->
+        <div id="cargar">
+            <h1 class="frase">Cargando</h1> 
+            <div class="cargando"></div>
+        </div>
+        
+        <!-- Menú -->
+        <header class="menu">
+            <nav class="navbar">
+                <div class="container">
+                    <!-- Logo - izquierda -->
+                    <a href="index.html" class="logo">
+                        <img src="img/icono.svg" alt="Logo - INGCO">
+                    </a>
+                    <!-- Modo -->
+                    <div class="caja-modo">
+                        <input type="checkbox" id="modo" onclick="CambioModo();">
+                        <label for="modo" class="circulo-modo"></label>
+                    </div>
+                    <!-- Botón de Carrito -->
+                    <div>
+                        <a href="#" class="btn bt-comprar px-3 py-2 my-0" onclick="gtag('event', 'Click', { 'event_category': 'Abrir', 'event_label': 'Carrito'});" data-toggle="modal" data-target="#carritoModal">
+                            <img src="img/carrito.svg" width="32px">
+                            <span class="contador tx-bold" id="carrito-container">0</span>
+                        </a> 
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Contenido -->
+        <main>
+            <!-- Filtros - Desktop -->
+            <section class="submenu-d" id="submenu">
+                <h5 class="tx-bold mb-4">Herramientas</h5>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Categoría 1 -->
+                        <a href="#" class="subcategoria todo" category="all">Ver todo</a>
+                        <!-- Categoría 2 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m2" aria-expanded="true">
+                                <img src="img/llave.svg" class="iconitos">
+                                Manuales
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m2" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria ManualesTodo tx-bold">- Ver Todo -</a>
+                                <a href="#" class="subcategoria MANUALES" category="ALICATES">Alicates</a>
+                                <a href="#" class="subcategoria MANUALES" category="CORTADORAS Y ESTILETES">Cortadoras y estiletes</a>
+                                <a href="#" class="subcategoria MANUALES" category="DESTORNILLADORES">Destornilladores</a>
+                                <a href="#" class="subcategoria MANUALES" category="ESPATULAS Y RODILLOS">Espátulas y rodillos</a>
+                                <a href="#" class="subcategoria MANUALES" category="LLAVES">Llaves</a>
+                                <a href="#" class="subcategoria MANUALES" category="MARTILLOS">Martillos</a> 
+                                <a href="#" class="subcategoria MANUALES" category="PRENSAS">Prensas</a>
+                                <div class="my-2"></div>      
+                            </div>
+                        </div>
+                        <!-- Categoría 3 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m3" aria-expanded="true">
+                                <img src="img/taladro.svg" class="iconitos">
+                                Eléctricas
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m3" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria ElectricasTodo tx-bold">- Ver Todo -</a>
+                                <a href="#" class="subcategoria ELECTRICAS" category="ACABADOS">Acabados</a>
+                                <a href="#" class="subcategoria ELECTRICAS" category="CORTE">Corte</a>
+                                <a href="#" class="subcategoria ELECTRICAS" category="ESTACIONARIAS">Estacionarias</a>
+                                <a href="#" class="subcategoria ELECTRICAS" category="FIJACION Y PERFORACION">Fijación y perforación</a>
+                                <a href="#" class="subcategoria ELECTRICAS" category="SOLDADORA Y GENERADOR">Soldadora y generador</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 4 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m4" aria-expanded="true">
+                                <img src="img/disco.svg" class="iconitos">
+                                Accesorios
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m4" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria AccesoriosTodo tx-bold">- Ver Todo -</a>
+                                <a href="#" class="subcategoria ACCESORIOS" category="BROCAS">Brocas</a>
+                                <a href="#" class="subcategoria ACCESORIOS" category="COPAS">Copas</a>
+                                <a href="#" class="subcategoria ACCESORIOS" category="DADOS">Dados</a>
+                                <a href="#" class="subcategoria ACCESORIOS" category="DISCOS">Discos</a>
+                                <a href="#" class="subcategoria ACCESORIOS" category="VARIOS">Varios</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 5 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m5" aria-expanded="true">
+                                <img src="img/cinta.svg" class="iconitos">
+                                Medición
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m5" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria MedicionTodo tx-bold">- Ver Todo -</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 6 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m6" aria-expanded="true">
+                                <img src="img/carro.svg" class="iconitos">
+                                Neumáticas
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m6" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria NeumaticasTodo tx-bold">- Ver Todo -</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                        <!-- Categoría 7 -->
+                        <div class="accordion" id="accordionExample">
+                            <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#d-m7" aria-expanded="true">
+                                <img src="img/casco.svg" class="iconitos">
+                                Seguridad
+                            </a>
+                            <!-- Subcategorias -->
+                            <div id="d-m7" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <a href="#" class="subcategoria SeguridadTodo tx-bold">- Ver Todo -</a>
+                                <div class="my-2"></div>       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tablero de productos -->
+            <section class="contenido">
+                <div class="row align-items-end pb-4">
+                    <!-- Titulares -->
+                    <div class="col-md-9 col-12">
+                        <h2 id="titulo"></h2>
+                        <h4 class="pb-md-0 pb-4" id="subtitulo"></h4>
+                    </div>
+                    <!-- Buscador -->
+                    <div class="col-md-3 col-12">
+                        <div class="row">
+                            <div class="col-lg-12 col-10">
+                                <div class="contenedor-buscador">
+                                    <input class="campo" type="text" id="buscar" placeholder="Buscar...">
+                                    <img src="img/cerrar.svg" class="icono-borrar" id="icono-borrar">
+                                </div>
+                            </div>
+                            <!-- Botón - Mobile -->
+                            <div class="col-lg-0 col-2 pl-0">                 
+                                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" onclick="gtag('event', 'Click', { 'event_category': 'Menú', 'event_label': 'BOTON'});"></button>
+                            </div>
+                        </div>
+                        <!-- Filtros - Mobile -->
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav border-top mt-2">
+                                <!-- Categoría 1 -->
+                                <div class="pt-4">
+                                    <a href="#" class="subcategoria todo" category="all" data-toggle="collapse" data-target=".navbar-collapse">Ver todo</a>
+                                </div>
+                                <!-- Categoría 2 -->
+                                <div class="accordion" id="accordionExample">
+                                    <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m2" aria-expanded="true">
+                                        <img src="img/llave.svg" class="iconitos">
+                                        Manuales
+                                    </a>
+                                    <!-- Subcategorias -->
+                                    <div id="m-m2" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ManualesTodo tx-bold">- Ver Todo -</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="ALICATES">Alicates</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="CORTADORAS Y ESTILETES">Cortadoras y estiletes</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="DESTORNILLADORES">Destornilladores</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="ESPATULAS Y RODILLOS">Espátulas y rodillos</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="LLAVES">Llaves</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="MARTILLOS">Martillos</a> 
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MANUALES" category="PRENSAS">Prensas</a>
+                                        <div class="my-2"></div>      
+                                    </div>
+                                </div>
+                                <!-- Categoría 3 -->
+                                <div class="accordion" id="accordionExample">
+                                    <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m3" aria-expanded="true">
+                                        <img src="img/taladro.svg" class="iconitos">
+                                        Eléctricas
+                                    </a>
+                                    <!-- Subcategorias -->
+                                    <div id="m-m3" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ElectricasTodo tx-bold">- Ver Todo -</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ELECTRICAS" category="ACABADOS">Acabados</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ELECTRICAS" category="CORTE">Corte</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ELECTRICAS" category="ESTACIONARIAS">Estacionarias</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ELECTRICAS" category="FIJACION Y PERFORACION">Fijación y perforación</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ELECTRICAS" category="SOLDADORA Y GENERADOR">Soldadora y generador</a>
+                                        <div class="my-2"></div>       
+                                    </div>
+                                </div>
+                                <!-- Categoría 4 -->
+                                <div class="accordion" id="accordionExample">
+                                    <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m4" aria-expanded="true">
+                                        <img src="img/disco.svg" class="iconitos">
+                                        Accesorios
+                                    </a>
+                                    <!-- Subcategorias -->
+                                    <div id="m-m4" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria AccesoriosTodo tx-bold">- Ver Todo -</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ACCESORIOS" category="BROCAS">Brocas</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ACCESORIOS" category="COPAS">Copas</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ACCESORIOS" category="DADOS">Dados</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ACCESORIOS" category="DISCOS">Discos</a>
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria ACCESORIOS" category="VARIOS">Varios</a>
+                                        <div class="my-2"></div>       
+                                    </div>
+                                </div>
+                                <!-- Categoría 5 -->
+                                <div class="accordion" id="accordionExample">
+                                    <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m5" aria-expanded="true">
+                                        <img src="img/cinta.svg" class="iconitos">
+                                        Medición
+                                    </a>
+                                    <!-- Subcategorias -->
+                                    <div id="m-m5" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria MedicionTodo tx-bold">- Ver Todo -</a>
+                                        <div class="my-2"></div>       
+                                    </div>
+                                </div>
+                                <!-- Categoría 6 -->
+                                <div class="accordion" id="accordionExample">
+                                    <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m6" aria-expanded="true">
+                                        <img src="img/carro.svg" class="iconitos">
+                                        Neumáticas
+                                    </a>
+                                    <!-- Subcategorias -->
+                                    <div id="m-m6" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria NeumaticasTodo tx-bold">- Ver Todo -</a>
+                                        <div class="my-2"></div>       
+                                    </div>
+                                </div>
+                                <!-- Categoría 7 -->
+                                <div class="accordion" id="accordionExample">
+                                    <a href="#" class="categoria collapsed" data-toggle="collapse" data-target="#m-m7" aria-expanded="true">
+                                        <img src="img/casco.svg" class="iconitos">
+                                        Seguridad
+                                    </a>
+                                    <!-- Subcategorias -->
+                                    <div id="m-m7" class="collapse pl-2" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <a href="#" data-toggle="collapse" data-target=".navbar-collapse" class="subcategoria SeguridadTodo tx-bold">- Ver Todo -</a>
+                                        <div class="my-2"></div>       
+                                    </div>
+                                </div>
+                                <!-- Contáctame -->
+                                <div class="text-center border-top py-4">
+                                    <!-- Frase -->
+                                    <h5 class="tx-negro mb-3">¿Necesitas ayuda para escoger <br>tu producto ideal?</h5>
+                                    <!-- Botón -->
+                                    <div class="text-center">
+                                        <a href="https://api.whatsapp.com/send?phone=593996637879&text=¡Hola! 👋🏼 Necesito su ayuda para..." target="blank" class="btn bt-comprar mt-0" onclick="gtag('event', 'Click', { 'event_category': 'WhatsApp', 'event_label': 'Arriba'});">
+                                            <img src="img/whatsapp.svg" class="mr-2 pb-1" width="20px">
+                                            Escríbenos
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Productos -->
+                <div class="row" id="catalogo"></div>
+                <!-- Sin productos -->
+                <div id="no-resultados" class="text-center mt-4 mb-5" style="display: none;">
+                    <img class="pb-4" src="img/empty-buscador.svg" width="200px">
+                    <h6>Sin resultados</h6>
+                    <p class="tx-gris">No encontramos el producto que buscas</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Asesoria -->
+        <footer class="ayuda">
+            <div class="row justify-content-center text-center">
+                <div class="container">
+                    <div class="row justify-content-center align-items-center text-center">
+                        <!-- Frase -->
+                        <div class="col-lg-5 col-md-6 col-12">
+                            <h5 class="tx-negro mb-md-0 mb-4">¿Necesitas ayuda para escoger <br>tu producto ideal?</h5>
+                        </div>
+                        <!-- Botón -->
+                        <div class="col-lg-3 col-md-4 col-10">
+                            <a href="https://api.whatsapp.com/send?phone=593996637879&text=¡Hola! 👋🏼 Necesito su ayuda para..." target="blank" class="btn bt-comprar mt-0" onclick="gtag('event', 'Click', { 'event_category': 'WhatsApp', 'event_label': 'Abajo'});">
+                                <img src="img/whatsapp.svg" class="mr-2 pb-1" width="20px">
+                                Escríbenos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Whatsapp fijo -->
+        <div class="acceso2">¿Necesitas ayuda?</div>
+            <a href="https://api.whatsapp.com/send?phone=593996637879&text=¡Hola! 👋🏼 Necesito su ayuda para..." target="blank" class="acceso" onclick="gtag('event', 'Click', { 'event_category': 'WhatsApp', 'event_label': 'Flotante'});"><img src="img/whatsapp.svg" width="40px"></a>
+        </div>
+
+        <!-- Modales de detalle -->
+        <div class="row" id="detalle"></div>
+
+        <!-- Modal de carrito -->
+        <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Cerrar -->
+                    <div class="bt-cerrar">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="img/cerrar.svg" width="32px">
+                        </button>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="modal-body pt-md-2 text-center">
+                        <div class="py-4 px-md-5 px-3">
+                            <div class="text-left pt-4">
+                                <h4 class="tx-bold">Mi carrito</h4>
+                                <!-- Productos agregados -->
+                                <div id="carritoContent" class="mt-4">
+                                    <div class="text-center">
+                                        <img class="pb-4" src="img/empty-carrito.svg" width="200px">
+                                        <h6>Carrito vacio</h6>
+                                        <p class="tx-gris">Aún no has agregado productos</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Acciones abajo -->
+                    <div class="modal-fijo">
+                        <div class="row justify-content-center">
+                            <!-- Botón -->
+                            <div class="col-10"> 
+                                <a href="#" class="btn bt-comprar" id="btn-comprar" onclick="gtag('event', 'Click', { 'event_category': 'Comprar', 'event_label': 'Carrito'});" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#carritoModal2">
+                                    Comprar - Total: <span class="tx-bold" id="totalCarrito">$0.00</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <!-- Modal de compra -->
+        <div class="modal fade" id="carritoModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <!-- Cerrar -->
+                    <div class="bt-cerrar">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <img src="img/cerrar.svg" width="32px">
+                        </button>
+                    </div>
+                    <!-- Contenido -->
+                    <div class="modal-body pt-md-2 text-center">
+                        <div class="py-4 px-md-5 px-3">
+                            <div class="text-left pt-4">
+                                <!-- Regresar -->
+                                <a href="#" class="vinculo" data-toggle="modal" data-target="#carritoModal" data-dismiss="modal" aria-label="Close">
+                                    <img src="img/flecha-izquierda.svg" class="icono-link mr-0">Volver a mi carrito</a>
+                                <h4 class="tx-bold">Datos</h4>
+                                <!-- Formulario -->
+                                <div class="row mt-4 mb-2">
+                                    <div class="accordion col-12" id="accordionExample2">
+                                        <!-- Sección 1 -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingform1">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Personales</button>
+                                                </h5>
+                                            </div>            
+                                            <div id="collapseOne" class="collapse show" aria-labelledby="headingform1" data-parent="#accordionExample2">
+                                                <div class="card-body row">
+                                                    <!-- Campos -->
+                                                    <div class="col-12" id="formularioPersonales"> 
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-12">
+                                                                <input class="campo mb-md-0 mb-3" type="text" placeholder="Nombre" id="nombre">
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <input class="campo mb-0" type="number" placeholder="Celular" id="celular">
+                                                            </div>
+                                                        </div>    
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Sección 2 -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingform2">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Envío</button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse" aria-labelledby="headingform2" data-parent="#accordionExample2">
+                                                <div class="card-body row align-items-center">
+                                                    <!-- Envío -->
+                                                    <div class="col-md-6 col-12" id="formularioEnvio">
+                                                        <select class="campo mb-md-0 mb-3" id="envioOpciones">
+                                                            <option value="0" disabled selected>Sector de envío</option>
+                                                            <option value="$0.00">Retiro en local</option>
+                                                            <option value="$3.00">Opción 2</option>
+                                                            <option value="$4.00">Opción 3</option>
+                                                            <option value="$5.00">Opción 4</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6 col-12">
+                                                        <div class="transferencia">
+                                                            <span class="tx-bold">Costo de envío: </span><span id="envioSeleccionado">$0.00</span>
+                                                        </div>
+                                                    </div>  
+                                                    <!-- Campos envío -->
+                                                    <div class="col-12 mt-3" id="direccionEnvio" style="display: none;"> 
+                                                        <p class="mensaje-campos text-center">Ingresa la dirección de entrega</p>
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-12">
+                                                                <input class="campo mb-3" type="text" placeholder="Calle principal" id="cPrincipal">
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <input class="campo mb-3" type="text" placeholder="Numeración" id="cNumero">
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <input class="campo mb-md-0 mb-3" type="text" placeholder="Calle secundaria" id="cSecundario">
+                                                            </div>
+                                                            <div class="col-md-6 col-12">
+                                                                <input class="campo mb-0" type="text" placeholder="Referencia" id="cReferencia">
+                                                            </div>
+                                                             <!-- UTMs -->
+                                                            <input type="hidden" name="utm_source" id="utm_source">
+                                                            <input type="hidden" name="utm_medium" id="utm_medium">
+                                                            <input type="hidden" name="utm_campaign" id="utm_campaign">
+                                                            <input type="hidden" name="utm_content" id="utm_content">
+                                                        </div>    
+                                                    </div>        
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Sección 3 -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingform3">
+                                                <h5 class="mb-0">
+                                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Pago</button>
+                                                </h5>
+                                            </div>
+                                            <div id="collapseThree" class="collapse" aria-labelledby="headingform3" data-parent="#accordionExample2">
+                                                <div class="card-body row">
+                                                    <!-- Forma de pago -->
+                                                    <div class="col-12" id="formularioPago"> 
+                                                        <div class="row">
+                                                            <div class="col-md-6 col-12">
+                                                                <select class="campo" id="pagoOpciones">
+                                                                    <option value="" disabled selected>Forma de pago</option>
+                                                                    <option value="Transferencia">Transferencia</option>
+                                                                    <option value="Tarjeta">Tarjeta</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>    
+                                                    </div> 
+                                                    <!-- Snack bar -->
+                                                    <div id="dato-copiado" class="mensaje-copiado" style="opacity: 0; visibility: hidden; right: -80px;">Dato copiado</div>
+                                                    <!-- Bancos para transferencia -->
+                                                    <div class="col-12" id="bancosTransferencia" style="display: none;">
+                                                        <p class="mensaje-campos text-center">Elige tu banco preferido y realiza la transferencia a sus datos</p>
+                                                        <!-- Tabs de bancos-->
+                                                        <nav>
+                                                            <div class="nav nav-tabs">
+                                                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-produbanco">Produbanco</a>
+                                                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-pichincha">Pichincha</a>
+                                                            </div>
+                                                        </nav>
+                                                        <div class="tab-content">
+                                                            <!-- Contenido Tab 1 -->
+                                                            <div class="tab-pane fade show active" id="nav-produbanco">
+                                                                <div class="row pt-4">
+                                                                    <div class="col-6">
+                                                                        <p class="tx-gris tx-bold mb-0">Banco</p>
+                                                                        <p class="tx-gris">Produbanco</p>
+                                                                        <p class="tx-gris tx-bold mb-0">Tipo de cuenta</p>
+                                                                        <p class="tx-gris">Ahorros</p>
+                                                                        <p class="tx-gris tx-bold mb-0">N° de Cuenta</p>
+                                                                        <p class="tx-gris d-inline-block pr-1 cuentaProdubanco">12186088189</p>
+                                                                        <a href="#" class="copiar" data-target=".cuentaProdubanco">
+                                                                            <img src="img/copiar.svg" width="16px">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <img src="img/logo-produbanco.svg" width="100%">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p class="tx-gris tx-bold mb-0">Nombre</p>
+                                                                        <p class="tx-gris d-inline-block pr-1 nombreProdubanco">Victor Játiva</p>
+                                                                        <a href="#" class="copiar" data-target=".nombreProdubanco">
+                                                                            <img src="img/copiar.svg" width="16px">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p class="tx-gris tx-bold mb-0">Cédula</p>
+                                                                        <p class="tx-gris d-inline-block pr-1 cedulaProdubanco">1722782305</p>
+                                                                        <a href="#" class="copiar" data-target=".cedulaProdubanco">
+                                                                            <img src="img/copiar.svg" width="16px">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- Contenido Tab 2 -->
+                                                            <div class="tab-pane fade" id="nav-pichincha">
+                                                                <div class="row pt-4">
+                                                                    <div class="col-6">
+                                                                        <p class="tx-gris tx-bold mb-0">Banco</p>
+                                                                        <p class="tx-gris">Pichincha</p>
+                                                                        <p class="tx-gris tx-bold mb-0">Tipo de cuenta</p>
+                                                                        <p class="tx-gris">Ahorros</p>
+                                                                        <p class="tx-gris tx-bold mb-0">N° de Cuenta</p>
+                                                                        <p class="tx-gris d-inline-block pr-1 cuentaPichincha">121860881899</p>
+                                                                        <a href="#" class="copiar" data-target=".cuentaPichincha">
+                                                                            <img src="img/copiar.svg" width="16px">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <img src="img/logo-pichincha.svg" width="100%">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-6">
+                                                                        <p class="tx-gris tx-bold mb-0">Nombre</p>
+                                                                        <p class="tx-gris d-inline-block pr-1 nombrePichincha">Victor Játivaa</p>
+                                                                        <a href="#" class="copiar" data-target=".nombrePichincha">
+                                                                            <img src="img/copiar.svg" width="16px">
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="col-6">
+                                                                        <p class="tx-gris tx-bold mb-0">Cédula</p>
+                                                                        <p class="tx-gris d-inline-block pr-1 cedulaPichincha">17227823055</p>
+                                                                        <a href="#" class="copiar" data-target=".cedulaPichincha">
+                                                                            <img src="img/copiar.svg" width="16px">
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Marcas para Tarjetas -->
+                                                    <div class="col-12 pb-4 text-center" id="marcasTarjetas" style="display: none;">
+                                                        <p class="mensaje-campos">Aceptamos todas las tarjetas de crédito y débito</p>  
+                                                        <img src="img/logos-tarjetas.svg" width="200px">
+                                                    </div>
+                                                    <!-- Valor -->
+                                                    <div class="col-12 mt-2">
+                                                        <div class="transferencia">
+                                                            <span class="tx-bold">Valor <span id="pagoSeleccionado">a Pagar</span>: </span><span id="totalPago">$0.00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Acciones abajo -->
+                    <div class="modal-fijo">
+                        <div class="row justify-content-center">
+                            <!-- Botón -->
+                            <div class="col-10"> 
+                                <a href="#" class="btn bt-comprar bt-inactivo" id="pagar" onclick="enviarPorWhatsApp(); enviarACarritoEnLinea(); gtag('event', 'Click', { 'event_category': 'Comprar', 'event_label': 'Pago'});" data-dismiss="modal" aria-label="Close">
+                                    Pagar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <!-- Funcionalidad de Precarga -->
+        <script>
+            window.onload = function(){
+                // Retraso adicional de 0.48 segundo (480 milisegundos)
+                setTimeout(function() {
+                    var cargar = document.getElementById('cargar');
+                    cargar.style.opacity = '0';
+                    cargar.style.display = 'none';
+                    }, 520);
+            }
+        </script>
+
+        <!-- Funcionalidad de Modo -->
+        <script>
+            function CambioModo() {
+              if(document.getElementById("modo").checked==true){
+                document.querySelector("html").style.setProperty('--color-blanco', "#263238");
+                document.querySelector("html").style.setProperty('--tx-gris', "#a7a7a7");
+                document.querySelector("html").style.setProperty('--tx-negro', "#ffffff");
+                document.querySelector("html").style.setProperty('--fondo-gris', "#37474f");
+                document.querySelector("html").style.setProperty('--sombra-caja', "#00000043");
+              } else{
+                document.querySelector("html").style.setProperty('--color-blanco', "#ffffff");
+                document.querySelector("html").style.setProperty('--tx-gris', "#878787");
+                document.querySelector("html").style.setProperty('--tx-negro', "#000000");
+                document.querySelector("html").style.setProperty('--fondo-gris', "#f3f3f3");
+                document.querySelector("html").style.setProperty('--sombra-caja', "#34292721");
+              };
+              gtag('event', 'Click', { 'event_category': 'Modo', 'event_label': 'Dark-White'});
+            }
+        </script>
+
+        <!-- Funcionalidad de cambio de valor del envío y visibilidad de la sección de envío -->
+        <script>
+            document.getElementById('envioOpciones').addEventListener('change', function() {         
+                var valorSeleccionado = document.getElementById('envioSeleccionado');
+                valorSeleccionado.textContent = this.value;
+
+                var direccionEnvio = document.getElementById('direccionEnvio');
+                var opcionEnvio = this.value;
+                         
+                if (opcionEnvio !== '$0.00') {
+                    direccionEnvio.style.display = 'block';
+
+                } else {
+                    direccionEnvio.style.display = 'none';
+                } 
+            });
+        </script>
+
+        <!-- Funcionalidad de visibilidad de la sección de bancos para transferencia -->
+        <script>
+            document.getElementById('pagoOpciones').addEventListener('change', function() {
+                var opcionSeleccionada = this.value;
+                var bancosTransferencia = document.getElementById('bancosTransferencia');
+                var marcasTarjetas= document.getElementById('marcasTarjetas');
+                var pagoSeleccionado= document.getElementById('pagoSeleccionado');
+                var botonPagar = document.getElementById('pagar');
+
+                if (opcionSeleccionada === 'Transferencia') {
+                    bancosTransferencia.style.display = 'block';
+                    marcasTarjetas.style.display = 'none';
+                    pagoSeleccionado.textContent = 'a Transferir';
+                    botonPagar.textContent = 'Enviar comprobante';
+                } else if (opcionSeleccionada === 'Tarjeta') {
+                    bancosTransferencia.style.display = 'none';
+                    marcasTarjetas.style.display = 'block';
+                    pagoSeleccionado.textContent = 'a Pagar';
+                    botonPagar.textContent = 'Solicitar link de pago';
+                } 
+            });
+        </script>
+
+        <!-- Funcionalidad de Copiar Texto -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const botonesCopiar = document.querySelectorAll('.copiar');
+                botonesCopiar.forEach(boton => {
+                    boton.addEventListener('click', function(event) {
+                        event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+                        
+                        const textoCopiar = this.dataset.target; // Obtener el selector del texto a copiar
+                        const texto = document.querySelector(textoCopiar).textContent.trim(); // Obtener el texto a copiar
+                        
+                        // Copiar el texto al portapapeles utilizando el API de Clipboard
+                        navigator.clipboard.writeText(texto)
+                        .then(() => {
+                            const datoCopiado = document.getElementById('dato-copiado');
+                            datoCopiado.style.visibility = 'visible';
+                            datoCopiado.style.opacity = '1';
+                            datoCopiado.style.right = '20px';
+                            setTimeout(function() {
+                                datoCopiado.style.visibility = 'hidden';
+                                datoCopiado.style.opacity = '0';
+                                datoCopiado.style.right = '-80px';
+                            }, 1400); // Ocultar el mensaje después de 1.4 segundos
+                        })
+                        .catch(err => {
+                            console.error('Error al copiar texto: ', err);
+                            // Puedes agregar aquí una notificación o mensaje de error si lo deseas
+                        });
+                    });
+                });
+            });
+        </script>
+
+        <!-- Funcionalidad de Verificar todos los datos y habilitar el botón -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var camposPersonales = document.querySelectorAll('#formularioPersonales .campo');
+                var camposEnvio = document.querySelectorAll('#formularioEnvio .campo');
+                var camposDireccion = document.querySelectorAll('#direccionEnvio .campo');
+                var camposPago = document.querySelectorAll('#formularioPago .campo');
+                var botonPagar = document.getElementById('pagar');
+                var selectEnvio = document.getElementById('envioOpciones');
+
+                // Verifica si todos los campos están completos
+                function verificarCamposCompletos() {
+                    var todosCompletos = true;
+                    
+                    // Verificar campos personales
+                    camposPersonales.forEach(function (campo) {
+                        if (campo.value.trim() === '') {
+                            todosCompletos = false;
+                        }
+                    });
+
+                    // Verificar campos de pago
+                    camposPago.forEach(function (campo) {
+                        if (campo.value.trim() === '') {
+                            todosCompletos = false;
+                        }
+                    });
+
+                    // Verificar campos de dirección solo si no es retiro en local
+                    if (selectEnvio.value !== '$0.00') {
+                        camposDireccion.forEach(function (campo) {
+                            if (campo.value.trim() === '') {
+                                todosCompletos = false;
+                            }
+                        });
+                    }
+
+                    // Si todos los campos están completos, activa el botón de pagar
+                    if (todosCompletos) {
+                        botonPagar.classList.remove('bt-inactivo');
+                    } else {
+                        botonPagar.classList.add('bt-inactivo');
+                    }
+                }
+
+                // Agrega un evento de escucha para cada cambio en los campos
+                camposPersonales.forEach(function (campo) {
+                    campo.addEventListener('input', verificarCamposCompletos);
+                });
+
+                camposEnvio.forEach(function (campo) {
+                    campo.addEventListener('input', verificarCamposCompletos);
+                });
+
+                camposDireccion.forEach(function (campo) {
+                    campo.addEventListener('input', verificarCamposCompletos);
+                });
+
+                camposPago.forEach(function (campo) {
+                    campo.addEventListener('input', verificarCamposCompletos);
+                });
+
+                selectEnvio.addEventListener('change', verificarCamposCompletos);
+            });
+        </script>
+
+        <!-- Funcionalidad que recoge los valores de las UTMs desde la url -->
+        <script>
+            (function() {
+            function getUTMParams() {
+                const params = new URLSearchParams(window.location.search);
+                const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+                utms.forEach(utm => {
+                const value = params.get(utm);
+                if (value) {
+                    localStorage.setItem(utm, value);
+                }
+                });
+            }
+            getUTMParams();
+            })();
+        </script>
+
+        <!-- Funcionalidad que ingresa los valores de las UTMs en el campos ocultos -->
+        <script>
+            window.addEventListener('DOMContentLoaded', function () {
+            const fields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content'];
+            fields.forEach(field => {
+                const value = localStorage.getItem(field);
+                if (value) {
+                const input = document.getElementById(field);
+                if (input) {
+                    input.value = value;
+                }
+                }
+            });
+            });
+        </script>
+
+        <!-- Funcionalidad de filtro-categoria -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="js/filtro.js"></script>
+
+        <!-- Funcionalidad de Modal -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+        <!-- Google Sheets API y script de catálogo -->
+        <script src="https://apis.google.com/js/api.js"></script>
+
+        <!-- Funcionalidad de replicar componentes -->
+        <script src="js/catalogo.js"></script>
+    </body>
+</html>
