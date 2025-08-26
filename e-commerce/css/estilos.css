@@ -233,7 +233,7 @@
         }
         select {
             appearance: none;
-            background-image: url(/img/flecha-abajo.svg);
+            background-image: url(../img/flecha-abajo.svg);
             margin-bottom: 8px;
         }
         input[id="nombre"]:focus,
