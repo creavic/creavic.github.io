@@ -57,7 +57,7 @@
                     </div>
                     <!-- Botón de Carrito -->
                     <div>
-                        <a href="#" class="btn bt-comprar px-3 py-2 my-0" onclick="gtag('event', 'Click', { 'event_category': 'Abrir', 'event_label': 'Carrito'});" data-toggle="modal" data-target="#carritoModal">
+                        <a href="#" class="btn bt-comprar px-3 py-2 my-0" onclick="gtag('event', 'Click', { 'event_category': 'Carrito', 'event_label': 'Abrir'});" data-toggle="modal" data-target="#carritoModal">
                             <img src="img/carrito.svg" width="32px">
                             <span class="contador tx-bold" id="carrito-container">0</span>
                         </a> 
@@ -374,7 +374,7 @@
                         <div class="row justify-content-center">
                             <!-- Botón -->
                             <div class="col-10"> 
-                                <a href="#" class="btn bt-comprar" id="btn-comprar" onclick="gtag('event', 'Click', { 'event_category': 'Comprar', 'event_label': 'Carrito'});" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#carritoModal2">
+                                <a href="#" class="btn bt-comprar" id="btn-comprar" onclick="gtag('event', 'Click', { 'event_category': 'Carrito', 'event_label': 'Comprar'});" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#carritoModal2">
                                     Comprar - Total: <span class="tx-bold" id="totalCarrito">$0.00</span>
                                 </a>
                             </div>
@@ -608,7 +608,7 @@
                         <div class="row justify-content-center">
                             <!-- Botón -->
                             <div class="col-10"> 
-                                <a href="#" class="btn bt-comprar bt-inactivo" id="pagar" onclick="enviarPorWhatsApp(); enviarACarritoEnLinea(); gtag('event', 'Click', { 'event_category': 'Comprar', 'event_label': 'Pago'});" data-dismiss="modal" aria-label="Close">
+                                <a href="#" class="btn bt-comprar bt-inactivo" id="pagar" onclick="enviarPorWhatsApp(); enviarACarritoEnLinea(); gtag('event', 'Click', { 'event_category': 'Pagar', 'event_label': this.innerText});" data-dismiss="modal" aria-label="Close">
                                     Pagar
                                 </a>
                             </div>
