@@ -432,9 +432,14 @@ const enviarACarritoEnLinea = () => {
     const utm2 = utmMedium.value;
     const utm3 = utmCampaign.value;
     const utm4 = utmContent.value;
+    let urlCreatividad = "https://creavic.github.io/e-commerce/img/Campanas/" + utm3 + "/" + utm4 + ".jpg";
     // Valida que si los campos de dirección están vacios, entonces envia vacio
     if (direccion1 === ''){
         direccionEntrega = '';
+    }
+    // Valida que si los campos de utm están vacios, entonces envia la creatividad
+    if (utm3 === ''){
+        urlCreatividad = '';
     }
     // Datos a enviar a Google Sheets - Debe tener el mismos nombres de la cabecera de la tabla
     const datos = carrito.detalle.map((producto) => ({
@@ -455,6 +460,7 @@ const enviarACarritoEnLinea = () => {
         Medium: utm2,
         Campaign: utm3,
         Content: utm4,
+        Creatividad: urlCreatividad, 
     }));
 
     // Llama y ejecuta la función dentro de Apps Script para ingresar datos en Google Sheets
